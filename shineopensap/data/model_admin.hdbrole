@@ -1,0 +1,24 @@
+role <PACKAGE_NAME>.data::model_admin 
+	extends role <PACKAGE_NAME>.data::model_access
+{	
+	package <PACKAGE_NAME>.data: REPO.READ, REPO.EDIT_NATIVE_OBJECTS, REPO.ACTIVATE_NATIVE_OBJECTS, REPO.MAINTAIN_NATIVE_PACKAGES, REPO.ACTIVATE_IMPORTED_OBJECTS;
+	package <PACKAGE_NAME>.models: REPO.READ, REPO.EDIT_NATIVE_OBJECTS, REPO.ACTIVATE_NATIVE_OBJECTS, REPO.MAINTAIN_NATIVE_PACKAGES, REPO.ACTIVATE_IMPORTED_OBJECTS, REPO.EDIT_IMPORTED_OBJECTS;
+
+	
+	application privilege: <PACKAGE_NAME>::Admin;	
+	
+		sql object <PACKAGE_NAME>.data:T006.hdbtable,
+	           <PACKAGE_NAME>.data:T006A.hdbtable,
+	           <PACKAGE_NAME>.data:TCURC.hdbtable,
+	           <PACKAGE_NAME>.data:TCURF.hdbtable,
+	           <PACKAGE_NAME>.data:TCURN.hdbtable,
+	           <PACKAGE_NAME>.data:TCURR.hdbtable,
+	           <PACKAGE_NAME>.data:TCURT.hdbtable,
+	           <PACKAGE_NAME>.data:TCURV.hdbtable,
+	           <PACKAGE_NAME>.data:TCURW.hdbtable,
+	           <PACKAGE_NAME>.data:TCURX.hdbtable,
+	           <PACKAGE_NAME>.data:TIME_DIMENSION.hdbtable: SELECT, INSERT, UPDATE, DELETE;
+	           
+	catalog schema "<SCHEMA_NAME>": SELECT, INSERT, UPDATE, DELETE, DROP, CREATE ANY;
+	        
+}

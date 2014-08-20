@@ -1,0 +1,19 @@
+table.schemaName = "<SCHEMA_NAME>";
+table.tableType = COLUMNSTORE;  
+table.description = "EPM Sales Order Header";
+table.columns = [ 
+	{name = "SalesOrderId"; sqlType = NVARCHAR; nullable = false; length = 10; comment = "Sales Order ID"; },
+	{name = "CreatedBy"; sqlType = NVARCHAR; nullable = false; length = 10; comment = "Created By"; },
+	{name = "CreatedAt"; sqlType = DATE; nullable = false;  comment = "Created At - Date and Time"; },
+	{name = "ChangedBy"; sqlType = NVARCHAR; nullable = true; length = 10; comment = "Last Changed By"; },	
+	{name = "ChangedAt"; sqlType = DATE; nullable = true;  comment = "Last Changed At - Date and Time"; },	
+	{name = "NoteId"; sqlType = NVARCHAR; nullable = true; length = 10; comment = "SO Note Text ID"; },
+	{name = "PartnerId"; sqlType = NVARCHAR; nullable = true; length = 10; comment = "Partner ID"; },
+	{name = "Currency"; sqlType = NVARCHAR; nullable = false; length = 5; comment = "Currency Code"; },	
+	{name = "GrossAmount"; sqlType = DECIMAL; nullable = false; precision = 15; scale = 2; defaultValue = "0"; comment = "Total Gross Amount"; },	
+	{name = "NetAmount"; sqlType = DECIMAL; nullable = false; precision = 15; scale = 2; defaultValue = "0"; comment = "Total Net Amount"; },	
+	{name = "TaxAmount"; sqlType = DECIMAL; nullable = false; precision = 15; scale = 2; defaultValue = "0"; comment = "Total Tax Amount"; },		
+	{name = "LifecycleStatus"; sqlType = NVARCHAR; nullable = true; length = 1; comment = "SO Lifecycle Status"; },	
+	{name = "BillingStatus"; sqlType = NVARCHAR; nullable = true; length = 1; comment = "Billing Status"; },
+	{name = "DeliveryStatus"; sqlType = NVARCHAR; nullable = true; length = 1; comment = "Delivery Status"; } ];			
+table.primaryKey.pkcolumns = ["SalesOrderId"];

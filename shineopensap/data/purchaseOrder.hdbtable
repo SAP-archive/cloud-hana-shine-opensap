@@ -1,0 +1,21 @@
+table.schemaName = "<SCHEMA_NAME>";
+table.tableType = COLUMNSTORE;  
+table.description = "EPM Purchase Order Header";
+table.columns = [ 
+	{name = "PurchaseOrderId"; sqlType = NVARCHAR; nullable = false; length = 10; comment = "Purchase Order ID"; },
+	{name = "CreatedBy"; sqlType = NVARCHAR; nullable = false; length = 10; comment = "Created By"; },
+	{name = "CreatedAt"; sqlType = DATE; nullable = false;  comment = "Created At - Date and Time"; },
+	{name = "ChangedBy"; sqlType = NVARCHAR; nullable = true; length = 10; comment = "Last Changed By"; },	
+	{name = "ChangedAt"; sqlType = DATE; nullable = true;  comment = "Last Changed At - Date and Time"; },	
+	{name = "NoteId"; sqlType = NVARCHAR; nullable = true; length = 10; comment = "PO Note Text ID"; },
+	{name = "PartnerId"; sqlType = NVARCHAR; nullable = true; length = 10; comment = "Partner ID"; },
+	{name = "Currency"; sqlType = NVARCHAR; nullable = false; length = 5; comment = "Currency Code"; },	
+	{name = "GrossAmount"; sqlType = DECIMAL; nullable = false; precision = 15; scale = 2; defaultValue = "0"; comment = "Total Gross Amount"; },	
+	{name = "NetAmount"; sqlType = DECIMAL; nullable = false; precision = 15; scale = 2; defaultValue = "0"; comment = "Total Net Amount"; },	
+	{name = "TaxAmount"; sqlType = DECIMAL; nullable = false; precision = 15; scale = 2; defaultValue = "0"; comment = "Total Tax Amount"; },		
+	{name = "LifecycleStatus"; sqlType = NVARCHAR; nullable = true; length = 1; comment = "PO Lifecycle Status"; },	
+	{name = "ApprovalStatus"; sqlType = NVARCHAR; nullable = true; length = 1; comment = "PO Approval Status"; },
+	{name = "ConfirmStatus"; sqlType = NVARCHAR; nullable = true; length = 1; comment = "PO Confirmation Status"; },
+	{name = "OrderingStatus"; sqlType = NVARCHAR; nullable = true; length = 1; comment = "PO Ordering Status"; },
+	{name = "InvoicingStatus"; sqlType = NVARCHAR; nullable = true; length = 1; comment = "PO Invoicing Status"; } ];			
+table.primaryKey.pkcolumns = ["PurchaseOrderId"];

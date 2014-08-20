@@ -1,0 +1,9 @@
+table.schemaName = "<SCHEMA_NAME>";
+table.tableType = COLUMNSTORE;  
+table.description = "EPM Constants";
+table.columns = [ 
+	{name = "Domain"; sqlType = NVARCHAR; nullable = false; length = 30; comment = "Domain"; },
+	{name = "FixedValue"; sqlType = NVARCHAR; nullable = true; length = 30; comment = "Fixed Value"; },
+	{name = "Language"; sqlType = NVARCHAR; nullable = false; length = 1; comment = "Language"; }, 
+	{name = "Description"; sqlType = NVARCHAR; nullable = false; length = 60; comment = "Short Description"; } ];
+table.primaryKey.pkcolumns = ["Domain","FixedValue","Language"];

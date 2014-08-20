@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Cube:cube xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Cube="http://www.sap.com/ndb/BiModelCube.ecore" xmlns:Privilege="http://www.sap.com/ndb/BiModelPrivilege.ecore" schemaVersion="1.5" id="AN_SALES_OVERVIEW" defaultClient="000" defaultLanguage="$$language$$" visibility="reportingEnabled">
+  <origin/>
+  <descriptions defaultDescription="AN_SALES_OVERVIEW"/>
+  <metadata changedAt="2012-12-12 17:14:12.164" createdAt="2012-10-24 16:10:11.983"/>
+  <defaultSchema schemaName="<SCHEMA_NAME>"/>
+  <localVariables>
+    <variable id="IP_O_Target_Currency" parameter="true">
+      <descriptions defaultDescription="IP_O_Target_Currency"/>
+      <variableProperties datatype="NVARCHAR" length="5" scale="0" defaultValue="EUR" mandatory="true">
+        <valueDomain type="Currency"/>
+        <selection multiLine="false" type="SingleValue"/>
+      </variableProperties>
+    </variable>
+  </localVariables>
+  <privateMeasureGroup id="MeasureGroup">
+    <attributes>
+      <attribute id="SalesOrderItem" hidden="false" displayAttribute="false">
+        <descriptions/>
+        <searchProperties/>
+        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::salesOrderItem" columnName="SalesOrderItem"/>
+      </attribute>
+      <attribute id="Currency" hidden="false" displayAttribute="false">
+        <descriptions/>
+        <searchProperties/>
+        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::salesOrderItem" columnName="Currency"/>
+      </attribute>
+      <attribute id="QuantityUnit" hidden="false" displayAttribute="false">
+        <descriptions/>
+        <searchProperties/>
+        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::salesOrderItem" columnName="QuantityUnit"/>
+      </attribute>
+      <attribute id="Posting_date" hidden="false" displayAttribute="false">
+        <descriptions/>
+        <searchProperties/>
+        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::salesOrder" columnName="CreatedAt"/>
+      </attribute>
+      <attribute id="SalesOrderId" hidden="false" displayAttribute="false">
+        <descriptions/>
+        <searchProperties/>
+        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::salesOrder" columnName="SalesOrderId"/>
+      </attribute>
+      <attribute id="PartnerId" hidden="true" displayAttribute="false">
+        <searchProperties/>
+        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::salesOrder" columnName="PartnerId"/>
+      </attribute>
+      <attribute id="ProductId" hidden="true" displayAttribute="false">
+        <searchProperties/>
+        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::salesOrderItem" columnName="ProductId"/>
+      </attribute>
+      <attribute id="CreatedAt_df" hidden="true" displayAttribute="false">
+        <searchProperties/>
+        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::salesOrder" columnName="CreatedAt"/>
+      </attribute>
+      <attribute id="BillingStatus" hidden="false" displayAttribute="false">
+        <descriptions/>
+        <searchProperties/>
+        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::salesOrder" columnName="BillingStatus"/>
+      </attribute>
+      <attribute id="DeliveryStatus" hidden="false" displayAttribute="false">
+        <searchProperties/>
+        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::salesOrder" columnName="DeliveryStatus"/>
+      </attribute>
+      <attribute id="LifecycleStatus" hidden="false" displayAttribute="false">
+        <searchProperties/>
+        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::salesOrder" columnName="LifecycleStatus"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies>
+        <tableProxy>
+          <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::salesOrder"/>
+        </tableProxy>
+        <tableProxy>
+          <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::salesOrderItem"/>
+        </tableProxy>
+      </tableProxies>
+      <joins>
+        <join>
+          <leftTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::salesOrderItem"/>
+          <rightTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::salesOrder"/>
+          <leftColumns>
+            <columnName>SalesOrderId</columnName>
+          </leftColumns>
+          <rightColumns>
+            <columnName>SalesOrderId</columnName>
+          </rightColumns>
+          <properties cardinality="CN_1" joinOperator="Equal" joinType="leftOuter"/>
+        </join>
+      </joins>
+      <layout>
+        <shapes>
+          <shape modelObjectName="<PACKAGE_NAME>.data::salesOrder" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+            <upperLeftCorner x="576" y="32"/>
+          </shape>
+          <shape modelObjectName="<PACKAGE_NAME>.data::salesOrderItem" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+            <upperLeftCorner x="16" y="16"/>
+          </shape>
+        </shapes>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="NetAmount" aggregationType="sum" measureType="amount">
+        <descriptions/>
+        <currencyConversion errorHandling="failOnError">
+          <client>
+            <value>000</value>
+          </client>
+          <schema schemaName="<SCHEMA_NAME>"/>
+          <sourceCurrency>
+            <attribute attributeName="Currency"/>
+          </sourceCurrency>
+          <erpDecimalShift>true</erpDecimalShift>
+          <targetCurrency>
+            <localVariable>#IP_O_Target_Currency</localVariable>
+          </targetCurrency>
+          <referenceDate>
+            <attribute attributeName="Posting_date"/>
+          </referenceDate>
+          <exchangeRateType>M</exchangeRateType>
+        </currencyConversion>
+        <measureMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::salesOrderItem" columnName="NetAmount"/>
+      </measure>
+      <measure id="Quantity" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription=""/>
+        <measureMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::salesOrderItem" columnName="Quantity"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures>
+      <measure id="RM_Amount_New" hidden="false" baseMeasure="#NetAmount">
+        <descriptions defaultDescription="RM_Amount_New"/>
+        <restriction logicalOperator="AND">
+          <filter xsi:type="Privilege:AttributeFilter" attributeName="LifecycleStatus">
+            <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="N"/>
+          </filter>
+          <dimensionUri>/<PACKAGE_NAME>.models/attributeviews/AT_SO_LIFECYCLE_STATUS</dimensionUri>
+        </restriction>
+      </measure>
+      <measure id="RM_Amount_InProcess" hidden="false" baseMeasure="#NetAmount">
+        <descriptions defaultDescription="RM_Amount_InProcess"/>
+        <restriction logicalOperator="AND">
+          <filter xsi:type="Privilege:AttributeFilter" attributeName="LifecycleStatus">
+            <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="P"/>
+          </filter>
+          <dimensionUri>/<PACKAGE_NAME>.models/attributeviews/AT_SO_LIFECYCLE_STATUS</dimensionUri>
+        </restriction>
+      </measure>
+      <measure id="RM_Amount_UnPaid" hidden="false" baseMeasure="#NetAmount">
+        <descriptions defaultDescription="RM_Amount_UnPaid"/>
+        <restriction logicalOperator="AND">
+          <filter xsi:type="Privilege:AttributeFilter" attributeName="BillingStatus">
+            <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="I"/>
+          </filter>
+          <dimensionUri>/<PACKAGE_NAME>.models/attributeviews/AT_SO_BILLING_STATUS</dimensionUri>
+        </restriction>
+      </measure>
+      <measure id="RM_Amount_Delivered" hidden="false" baseMeasure="#NetAmount">
+        <descriptions defaultDescription="RM_Amount_Delivered"/>
+        <restriction logicalOperator="AND">
+          <filter xsi:type="Privilege:AttributeFilter" attributeName="DeliveryStatus">
+            <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="D"/>
+          </filter>
+          <dimensionUri>/<PACKAGE_NAME>.models/attributeviews/AT_SO_DELIVERY_STATUS</dimensionUri>
+        </restriction>
+      </measure>
+      <measure id="RM_Amount_UnDelivered" hidden="false" baseMeasure="#NetAmount">
+        <descriptions defaultDescription="RM_Amount_UnDelivered"/>
+        <restriction logicalOperator="AND">
+          <filter xsi:type="Privilege:AttributeFilter" attributeName="DeliveryStatus">
+            <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="I"/>
+          </filter>
+          <dimensionUri>/<PACKAGE_NAME>.models/attributeviews/AT_SO_DELIVERY_STATUS</dimensionUri>
+        </restriction>
+      </measure>
+      <measure id="RM_Amount_Completed" hidden="false" baseMeasure="#NetAmount">
+        <descriptions defaultDescription="RM_Amount_Completed"/>
+        <restriction logicalOperator="AND">
+          <filter xsi:type="Privilege:AttributeFilter" attributeName="LifecycleStatus">
+            <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="C"/>
+          </filter>
+          <dimensionUri>/<PACKAGE_NAME>.models/attributeviews/AT_SO_LIFECYCLE_STATUS</dimensionUri>
+        </restriction>
+      </measure>
+      <measure id="RM_Amount_Paid" hidden="false" baseMeasure="#NetAmount">
+        <descriptions defaultDescription="RM_Amount_Paid"/>
+        <restriction logicalOperator="AND">
+          <filter xsi:type="Privilege:AttributeFilter" attributeName="BillingStatus">
+            <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="P"/>
+          </filter>
+          <dimensionUri>/<PACKAGE_NAME>.models/attributeviews/AT_SO_BILLING_STATUS</dimensionUri>
+        </restriction>
+      </measure>
+    </restrictedMeasures>
+    <sharedDimensions>
+      <logicalJoin associatedObjectUri="/<PACKAGE_NAME>.models/attributeviews/AT_BUYER">
+        <attributes>
+          <attributeRef>#PartnerId</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>PartnerId</attributeName>
+        </associatedAttributeNames>
+        <properties cardinality="CN_1" joinOperator="Equal" joinType="leftOuter"/>
+        <associatedAttributeFeatures/>
+      </logicalJoin>
+      <logicalJoin associatedObjectUri="/<PACKAGE_NAME>.models/attributeviews/AT_PRODUCT">
+        <attributes>
+          <attributeRef>#ProductId</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>Product_Id</attributeName>
+        </associatedAttributeNames>
+        <properties cardinality="CN_1" joinOperator="Equal" joinType="leftOuter"/>
+        <associatedAttributeFeatures/>
+      </logicalJoin>
+      <logicalJoin associatedObjectUri="/<PACKAGE_NAME>.models/attributeviews/AT_TIME_DIMENSION">
+        <attributes>
+          <attributeRef>#CreatedAt_df</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>DATE_SQL</attributeName>
+        </associatedAttributeNames>
+        <properties cardinality="CN_1" joinOperator="Equal" joinType="leftOuter"/>
+        <associatedAttributeFeatures/>
+      </logicalJoin>
+      <logicalJoin associatedObjectUri="/<PACKAGE_NAME>.models/attributeviews/AT_SO_BILLING_STATUS">
+        <attributes>
+          <attributeRef>#BillingStatus</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>BillingStatus</attributeName>
+        </associatedAttributeNames>
+        <properties cardinality="CN_1" joinOperator="Equal" joinType="referential"/>
+        <associatedAttributeFeatures/>
+      </logicalJoin>
+      <logicalJoin associatedObjectUri="/<PACKAGE_NAME>.models/attributeviews/AT_SO_DELIVERY_STATUS">
+        <attributes>
+          <attributeRef>#DeliveryStatus</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>DeliveryStatus</attributeName>
+        </associatedAttributeNames>
+        <properties cardinality="CN_1" joinOperator="Equal" joinType="referential"/>
+        <associatedAttributeFeatures/>
+      </logicalJoin>
+      <logicalJoin associatedObjectUri="/<PACKAGE_NAME>.models/attributeviews/AT_SO_LIFECYCLE_STATUS">
+        <attributes>
+          <attributeRef>#LifecycleStatus</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>LifecycleStatus</attributeName>
+        </associatedAttributeNames>
+        <properties cardinality="CN_1" joinOperator="Equal" joinType="referential"/>
+        <associatedAttributeFeatures/>
+      </logicalJoin>
+    </sharedDimensions>
+    <layout id="AN_SALES_OVERVIEW">
+      <shapes>
+        <shape modelObjectName="MEASURE_GROUP" modelObjectType="repository">
+          <upperLeftCorner x="507" y="128"/>
+        </shape>
+        <shape modelObjectName="/<PACKAGE_NAME>.models/attributeviews/AT_BUYER.attributeview" modelObjectType="repository">
+          <upperLeftCorner x="745" y="148"/>
+        </shape>
+        <shape modelObjectName="/<PACKAGE_NAME>.models/attributeviews/AT_PRODUCT.attributeview" modelObjectType="repository">
+          <upperLeftCorner x="16" y="116"/>
+        </shape>
+        <shape modelObjectName="/<PACKAGE_NAME>.models/attributeviews/AT_TIME_DIMENSION.attributeview" modelObjectType="repository">
+          <upperLeftCorner x="745" y="344"/>
+        </shape>
+        <shape modelObjectName="/<PACKAGE_NAME>.models/attributeviews/AT_SO_BILLING_STATUS.attributeview" modelObjectType="repository">
+          <upperLeftCorner x="16" y="424"/>
+        </shape>
+        <shape modelObjectName="/<PACKAGE_NAME>.models/attributeviews/AT_SO_DELIVERY_STATUS.attributeview" modelObjectType="repository">
+          <upperLeftCorner x="16" y="16"/>
+        </shape>
+        <shape modelObjectName="/<PACKAGE_NAME>.models/attributeviews/AT_SO_LIFECYCLE_STATUS.attributeview" modelObjectType="repository">
+          <upperLeftCorner x="745" y="48"/>
+        </shape>
+      </shapes>
+    </layout>
+  </privateMeasureGroup>
+</Cube:cube>

@@ -1,0 +1,172 @@
+import = [
+
+{
+
+                table = "<PACKAGE_NAME>.data::addresses";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:addresses.csv"; 
+                header = false;
+            },
+            
+             {
+                table = "<PACKAGE_NAME>.data::businessPartner";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:businessPartner.csv"; 
+                header = false;
+            },
+            
+          
+           
+                {
+                table = "<PACKAGE_NAME>.data::constants";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:constants.csv"; 
+                header = false;
+            },
+            
+            
+                {
+                table = "<PACKAGE_NAME>.data::employees";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:employees.csv"; 
+                header = false;
+            },
+            
+            
+              {
+                table = "<PACKAGE_NAME>.data::messages";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:messages.csv"; 
+                header = false;
+            },
+            
+            
+             {
+                table = "<PACKAGE_NAME>.data::products";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:products.csv"; 
+                header = false;
+            },
+            
+             {
+                table = "<PACKAGE_NAME>.data::purchaseOrder";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:purchaseOrder.csv"; 
+                header = false;
+            },
+                        
+                 
+            
+            {
+                table = "<PACKAGE_NAME>.data::purchaseOrderItem";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:purchaseOrderItem.csv"; 
+                header = false;
+            },
+            
+               {
+                table = "<PACKAGE_NAME>.data::salesOrder";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:salesOrder.csv"; 
+                header = false;
+            },
+            
+              {
+                table = "<PACKAGE_NAME>.data::salesOrderItem";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:salesOrderItem.csv"; 
+                header = false;
+            },
+            
+            
+             {
+                table = "<PACKAGE_NAME>.data::T006";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:T006.csv"; 
+                header = false;
+            },
+            
+                 {
+                table = "<PACKAGE_NAME>.data::T006A";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:T006A.csv"; 
+                header = false;
+            },
+            
+            
+            
+           {
+                table = "<PACKAGE_NAME>.data::TCURC";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:TCURC.csv"; 
+                header = false;
+            },
+                       
+             {
+                table = "<PACKAGE_NAME>.data::TCURF";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:TCURF.csv"; 
+                header = false;
+            }, 
+            
+             {
+                table = "<PACKAGE_NAME>.data::TCURN";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:TCURN.csv"; 
+                header = false;
+            },
+            
+              {
+                table = "<PACKAGE_NAME>.data::TCURR";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:TCURR.csv"; 
+                header = false;
+            },
+            
+              {
+                table = "<PACKAGE_NAME>.data::TCURT";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:TCURT.csv"; 
+                header = false;
+            },
+            
+            
+            {
+                table = "<PACKAGE_NAME>.data::TCURV";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:TCURV.csv"; 
+                header = false;
+            },
+            
+              
+            {
+                table = "<PACKAGE_NAME>.data::TCURW";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:TCURW.csv"; 
+                header = false;
+            },
+            
+            {
+                table = "<PACKAGE_NAME>.data::TCURX";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:TCURX.csv"; 
+                header = false;
+            },
+            
+            
+            {
+                table = "<PACKAGE_NAME>.data::texts";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:texts.csv"; 
+                header = false;
+            },
+            
+              {
+                table = "<PACKAGE_NAME>.data::TIME_DIMENSION";
+                schema = "<SCHEMA_NAME>";
+                file = "<PACKAGE_NAME>.data:TIME_DIMENSION.csv"; 
+                header = false;
+            }
+            
+            
+ ];

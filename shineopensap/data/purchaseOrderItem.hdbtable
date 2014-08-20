@@ -1,0 +1,16 @@
+table.schemaName = "<SCHEMA_NAME>";
+table.tableType = COLUMNSTORE;  
+table.description = "EPM Purchase Order Item";
+table.columns = [ 
+	{name = "PurchaseOrderId"; sqlType = NVARCHAR; nullable = false; length = 10; comment = "Purchase Order ID"; },
+	{name = "PurchaseOrderItem"; sqlType = NVARCHAR; nullable = false; length = 10; comment = "Purchase Order Item"; },
+	{name = "ProductId"; sqlType = NVARCHAR; nullable = false; length = 10; comment = "Product ID"; },
+	{name = "NoteId"; sqlType = NVARCHAR; nullable = true; length = 10; comment = "PO Note Text ID"; },
+	{name = "Currency"; sqlType = NVARCHAR; nullable = false; length = 5; comment = "Currency Code"; },	
+	{name = "GrossAmount"; sqlType = DECIMAL; nullable = false; precision = 15; scale = 2; defaultValue = "0"; comment = "Gross Amount"; },	
+	{name = "NetAmount"; sqlType = DECIMAL; nullable = false; precision = 15; scale = 2; defaultValue = "0"; comment = "Net Amount"; },	
+	{name = "TaxAmount"; sqlType = DECIMAL; nullable = false; precision = 15; scale = 2; defaultValue = "0"; comment = "Tax Amount"; },
+	{name = "Quantity"; sqlType = DECIMAL; nullable = false; precision = 13; scale = 3; defaultValue = "0"; comment = "Quantity"; },	
+	{name = "QuantityUnit"; sqlType = NVARCHAR; nullable = false; length = 3; comment = "Quantity Unit"; },
+	{name = "DeliveryDate"; sqlType = DATE; nullable = true;  comment = "Scheduled Delivery Date"; }];		
+table.primaryKey.pkcolumns = ["PurchaseOrderId","PurchaseOrderItem"];

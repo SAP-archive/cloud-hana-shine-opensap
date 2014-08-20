@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dimension:dimension xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" schemaVersion="1.2" id="AT_PURCHASE_ORDER_WORKLIST" defaultClient="$$client$$" defaultLanguage="$$language$$" visibility="internal" dimensionType="Standard">
+  <origin/>
+  <descriptions defaultDescription="Purchase Order Worklist"/>
+  <metadata changedAt="2013-05-17 15:06:13.037" createdAt="2012-12-06 15:50:03.911"/>
+  <attributes>
+    <attribute id="PurchaseOrderId" hidden="false" displayAttribute="false" key="true">
+      <descriptions defaultDescription="PurchaseOrderId"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" columnName="PurchaseOrderId"/>
+    </attribute>
+    <attribute id="PurchaseOrderItem" hidden="false" displayAttribute="false" key="true">
+      <descriptions defaultDescription="PurchaseOrderItem"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" columnName="PurchaseOrderItem"/>
+    </attribute>
+    <attribute id="PartnerId" hidden="false" displayAttribute="false">
+      <descriptions defaultDescription="PartnerId"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder" columnName="PartnerId"/>
+    </attribute>
+    <attribute id="CompanyName" hidden="false" displayAttribute="false">
+      <descriptions defaultDescription="CompanyName"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::businessPartner" columnName="CompanyName"/>
+    </attribute>
+    <attribute id="GrossAmount" hidden="false" displayAttribute="false">
+      <descriptions defaultDescription="GrossAmount"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder" columnName="GrossAmount"/>
+    </attribute>
+    <attribute id="Currency" hidden="false" displayAttribute="false">
+      <descriptions defaultDescription="Currency"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder" columnName="Currency"/>
+    </attribute>
+    <attribute id="LifecycleDesc" hidden="false" displayAttribute="false">
+      <descriptions defaultDescription="Description"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::constants" columnName="Description"/>
+    </attribute>
+    <attribute id="ApprovalDesc" hidden="false" displayAttribute="false">
+      <descriptions defaultDescription="Description"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::constants" alias="ApprovalConstants" columnName="Description"/>
+    </attribute>
+    <attribute id="ConfirmationDesc" hidden="false" displayAttribute="false">
+      <descriptions defaultDescription="Description"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::constants" alias="ConfirmationConstants" columnName="Description"/>
+    </attribute>
+    <attribute id="OrderingDesc" hidden="false" displayAttribute="false">
+      <descriptions defaultDescription="Description"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::constants" alias="OrderingConstants" columnName="Description"/>
+    </attribute>
+    <attribute id="ProductId" hidden="false" displayAttribute="false">
+      <descriptions defaultDescription="ProductId"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" columnName="ProductId"/>
+    </attribute>
+    <attribute id="ProductTypeCode" hidden="false" displayAttribute="false">
+      <descriptions defaultDescription="TypeCode"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::products" columnName="TypeCode"/>
+    </attribute>
+    <attribute id="ProductCategory" hidden="false" displayAttribute="false">
+      <descriptions defaultDescription="Category"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::products" columnName="Category"/>
+    </attribute>
+    <attribute id="ProductName" hidden="false" displayAttribute="false">
+      <descriptions defaultDescription="Text"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::texts" columnName="Text"/>
+    </attribute>
+    <attribute id="ProductDesc" hidden="false" displayAttribute="false">
+      <descriptions defaultDescription="Text"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::texts" alias="ProductDescriptionTexts" columnName="Text"/>
+    </attribute>
+    <attribute id="PartnerCity" hidden="false" displayAttribute="false">
+      <descriptions defaultDescription="City"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses" columnName="City"/>
+    </attribute>
+    <attribute id="PartnerPostalCode" hidden="false" displayAttribute="false">
+      <descriptions defaultDescription="PostalCode"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses" columnName="PostalCode"/>
+    </attribute>
+    <attribute id="Quantity">
+      <descriptions defaultDescription="Quantity"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" columnName="Quantity"/>
+    </attribute>
+    <attribute id="QuantityUnit">
+      <descriptions defaultDescription="QuantityUnit"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" columnName="QuantityUnit"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <privateDataFoundation>
+    <tableProxies>
+      <tableProxy>
+        <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::businessPartner"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::products"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::texts"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::texts" alias="ProductDescriptionTexts"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::constants"/>
+        <columnFilter columnName="Domain">
+          <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="D_PO_LC"/>
+        </columnFilter>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::constants" alias="ApprovalConstants"/>
+        <columnFilter columnName="Domain">
+          <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="D_PO_AP"/>
+        </columnFilter>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::constants" alias="ConfirmationConstants"/>
+        <columnFilter columnName="Domain">
+          <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="D_PO_CF"/>
+        </columnFilter>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::constants" alias="OrderingConstants"/>
+        <columnFilter columnName="Domain">
+          <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="D_PO_OR"/>
+        </columnFilter>
+      </tableProxy>
+    </tableProxies>
+    <joins>
+      <join>
+        <leftTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder"/>
+        <rightTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem"/>
+        <leftColumns>
+          <columnName>PurchaseOrderId</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>PurchaseOrderId</columnName>
+        </rightColumns>
+        <properties cardinality="C1_N" joinOperator="Equal" joinType="leftOuter"/>
+      </join>
+      <join>
+        <leftTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder"/>
+        <rightTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::businessPartner"/>
+        <leftColumns>
+          <columnName>PartnerId</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>PartnerId</columnName>
+        </rightColumns>
+        <properties cardinality="C1_1" joinOperator="Equal" joinType="referential"/>
+      </join>
+      <join languageColumn="Language">
+        <leftTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder"/>
+        <rightTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::constants"/>
+        <leftColumns>
+          <columnName>LifecycleStatus</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>FixedValue</columnName>
+        </rightColumns>
+        <properties cardinality="C1_1" joinOperator="Equal" joinType="textTable"/>
+      </join>
+      <join languageColumn="Language">
+        <leftTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder"/>
+        <rightTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::constants" alias="ApprovalConstants"/>
+        <leftColumns>
+          <columnName>ApprovalStatus</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>FixedValue</columnName>
+        </rightColumns>
+        <properties cardinality="C1_1" joinOperator="Equal" joinType="textTable"/>
+      </join>
+      <join languageColumn="Language">
+        <leftTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder"/>
+        <rightTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::constants" alias="ConfirmationConstants"/>
+        <leftColumns>
+          <columnName>ConfirmStatus</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>FixedValue</columnName>
+        </rightColumns>
+        <properties cardinality="C1_1" joinOperator="Equal" joinType="textTable"/>
+      </join>
+      <join languageColumn="Language">
+        <leftTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder"/>
+        <rightTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::constants" alias="OrderingConstants"/>
+        <leftColumns>
+          <columnName>OrderingStatus</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>FixedValue</columnName>
+        </rightColumns>
+        <properties cardinality="C1_1" joinOperator="Equal" joinType="textTable"/>
+      </join>
+      <join>
+        <leftTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem"/>
+        <rightTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::products"/>
+        <leftColumns>
+          <columnName>ProductId</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>ProductId</columnName>
+        </rightColumns>
+        <properties cardinality="C1_1" joinOperator="Equal" joinType="referential"/>
+      </join>
+      <join languageColumn="Language">
+        <leftTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::products"/>
+        <rightTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::texts"/>
+        <leftColumns>
+          <columnName>NameId</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>TextId</columnName>
+        </rightColumns>
+        <properties cardinality="C1_1" joinOperator="Equal" joinType="textTable"/>
+      </join>
+      <join languageColumn="Language">
+        <leftTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::products"/>
+        <rightTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::texts" alias="ProductDescriptionTexts"/>
+        <leftColumns>
+          <columnName>DescId</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>TextId</columnName>
+        </rightColumns>
+        <properties cardinality="C1_1" joinOperator="Equal" joinType="textTable"/>
+      </join>
+      <join>
+        <leftTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::businessPartner"/>
+        <rightTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses"/>
+        <leftColumns>
+          <columnName>AddressId</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>AddressId</columnName>
+        </rightColumns>
+        <properties cardinality="C1_1" joinOperator="Equal" joinType="referential"/>
+      </join>
+    </joins>
+    <layout>
+      <shapes>
+        <shape modelObjectName="<PACKAGE_NAME>.data::purchaseOrder" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+          <upperLeftCorner x="50" y="25"/>
+        </shape>
+        <shape modelObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+          <upperLeftCorner x="50" y="347"/>
+        </shape>
+        <shape modelObjectName="<PACKAGE_NAME>.data::businessPartner" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+          <upperLeftCorner x="50" y="589"/>
+        </shape>
+        <shape modelObjectName="<PACKAGE_NAME>.data::products" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+          <upperLeftCorner x="575" y="25"/>
+        </shape>
+        <shape modelObjectName="<PACKAGE_NAME>.data::addresses" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+          <upperLeftCorner x="575" y="427"/>
+        </shape>
+        <shape modelObjectName="<PACKAGE_NAME>.data::texts" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+          <upperLeftCorner x="575" y="637"/>
+        </shape>
+        <shape modelObjectName="ProductDescriptionTexts" modelObjectType="catalog">
+          <upperLeftCorner x="575" y="751"/>
+        </shape>
+        <shape modelObjectName="<PACKAGE_NAME>.data::constants" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+          <upperLeftCorner x="1166" y="25"/>
+        </shape>
+        <shape modelObjectName="ApprovalConstants" modelObjectType="catalog">
+          <upperLeftCorner x="1166" y="155"/>
+        </shape>
+        <shape modelObjectName="ConfirmationConstants" modelObjectType="catalog">
+          <upperLeftCorner x="1166" y="285"/>
+        </shape>
+        <shape modelObjectName="OrderingConstants" modelObjectType="catalog">
+          <upperLeftCorner x="1166" y="415"/>
+        </shape>
+      </shapes>
+    </layout>
+  </privateDataFoundation>
+  <hierarchies/>
+</Dimension:dimension>

@@ -1,0 +1,5 @@
+{
+	"exposed": true,
+	"authentication": [{ "method": "LogonTicket" },{ "method" : "Form" }],
+	"authorization": [ "<PACKAGE_NAME>::Admin" ]
+}

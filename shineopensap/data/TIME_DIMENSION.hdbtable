@@ -1,0 +1,33 @@
+table.schemaName = "<SCHEMA_NAME>";
+table.tableType = COLUMNSTORE;  
+table.description = "Time Dimension";
+table.columns = [ 
+	{name = "DATETIMESTAMP"; sqlType = TIMESTAMP; nullable = false;  },
+	{name = "DATE_SQL"; sqlType = DATE; nullable = true;  },
+	{name = "DATETIME_SAP"; sqlType = VARCHAR; nullable = true; length = 14;  },
+	{name = "DATE_SAP"; sqlType = VARCHAR; nullable = true; length = 8; },	
+	{name = "YEAR"; sqlType = VARCHAR; nullable = true; length = 4;  },	
+	{name = "QUARTER"; sqlType = VARCHAR; nullable = true; length = 2;  },
+	{name = "MONTH"; sqlType = VARCHAR; nullable = true; length = 2;  },	
+	{name = "WEEK"; sqlType = VARCHAR; nullable = true; length = 2;  },
+	{name = "WEEK_YEAR"; sqlType = VARCHAR; nullable = true; length = 4;  },
+	{name = "DAY_OF_WEEK"; sqlType = VARCHAR; nullable = true; length = 2; },	
+	{name = "DAY"; sqlType = VARCHAR; nullable = true; length = 2;  },	
+	{name = "HOUR"; sqlType = VARCHAR; nullable = true; length = 2;  },
+	{name = "MINUTE"; sqlType = VARCHAR; nullable = true; length = 2;  },	
+	{name = "SECOND"; sqlType = VARCHAR; nullable = true; length = 2;  },	
+	{name = "CALQUARTER"; sqlType = VARCHAR; nullable = true; length = 5;  },
+	{name = "CALMONTH"; sqlType = VARCHAR; nullable = true; length = 6; },	
+	{name = "CALWEEK"; sqlType = VARCHAR; nullable = true; length = 6;  },	
+	{name = "YEAR_INT"; sqlType = INTEGER; nullable = true; },
+	{name = "QUARTER_INT"; sqlType = TINYINT; nullable = true;  },	
+	{name = "MONTH_INT"; sqlType = TINYINT; nullable = true;  },	
+	{name = "WEEK_INT"; sqlType = TINYINT; nullable = true; },
+	{name = "WEEK_YEAR_INT"; sqlType = INTEGER; nullable = true;  },	
+	{name = "DAY_OF_WEEK_INT"; sqlType = TINYINT; nullable = true;  },
+	{name = "DAY_INT"; sqlType = TINYINT; nullable = true; },
+	{name = "HOUR_INT"; sqlType = TINYINT; nullable = true;  },	
+	{name = "MINUTE_INT"; sqlType = TINYINT; nullable = true;  },	
+	{name = "SECOND_INT"; sqlType = TINYINT; nullable = true; } ];
+table.primaryKey.pkcolumns = ["DATETIMESTAMP"];
+

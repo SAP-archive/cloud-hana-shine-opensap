@@ -1,0 +1,9 @@
+table.schemaName = "<SCHEMA_NAME>";
+table.tableType = COLUMNSTORE;  
+table.columns = [ 
+	{name = "MANDT"; sqlType = NVARCHAR; length = 3; nullable = true; defaultValue = "000";  },
+	{name = "SPRAS"; sqlType = NVARCHAR; length = 1; nullable = true; defaultValue = "";  },	
+	{name = "KURST"; sqlType = NVARCHAR; length = 4; nullable = true; defaultValue = "";  },	
+	{name = "CURVW"; sqlType = NVARCHAR; length = 40; nullable = true; defaultValue = "";  } ];
+table.primaryKey.pkcolumns = ["MANDT", "SPRAS", "KURST"];
+

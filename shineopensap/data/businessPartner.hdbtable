@@ -1,0 +1,19 @@
+table.schemaName = "<SCHEMA_NAME>";
+table.tableType = COLUMNSTORE;  
+table.description = "EPM Business Partners";
+table.columns = [ 
+	{name = "PartnerId"; sqlType = NVARCHAR; nullable = false; length = 10; comment = "Partner ID"; },
+	{name = "PartnerRole"; sqlType = NVARCHAR; nullable = false; length = 3; comment = "Business Partner Role"; },	
+	{name = "EmailAddress"; sqlType = NVARCHAR; nullable = false; length = 255; comment = "E-Mail Address"; },
+	{name = "PhoneNumber"; sqlType = NVARCHAR; nullable = false; length = 30; comment = "Business Phone Number"; },	
+	{name = "FaxNumber"; sqlType = NVARCHAR; nullable = true; length = 30; comment = "Business Fax Number"; },	
+	{name = "WebAddress"; sqlType = NVARCHAR; nullable = false; length = 1024; comment = "Web Address"; },
+	{name = "AddressId"; sqlType = NVARCHAR; nullable = true; length = 10; comment = "Address ID"; },
+	{name = "CompanyName"; sqlType = NVARCHAR; nullable = false; length = 80; comment = "Company Name"; },
+	{name = "LegalForm"; sqlType = NVARCHAR; nullable = false; length = 10; comment = "Legal Form of Business Partner"; },		
+	{name = "CreatedBy"; sqlType = NVARCHAR; nullable = false; length = 10; comment = "Created By"; },
+	{name = "CreatedAt"; sqlType = DATE; nullable = false;  comment = "Created At - Date and Time"; },
+	{name = "ChangedBy"; sqlType = NVARCHAR; nullable = true; length = 10; comment = "Last Changed By"; },	
+	{name = "ChangedAt"; sqlType = DATE; nullable = true;  comment = "Last Changed At - Date and Time"; },	
+	{name = "Currency"; sqlType = NVARCHAR; nullable = false; length = 5; comment = "Currency Code"; } ];	
+table.primaryKey.pkcolumns = ["PartnerId"];

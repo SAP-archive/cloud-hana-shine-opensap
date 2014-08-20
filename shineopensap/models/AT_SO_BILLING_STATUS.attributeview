@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dimension:dimension xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" schemaVersion="1.2" id="AT_SO_BILLING_STATUS" defaultClient="$$client$$" defaultLanguage="$$language$$" visibility="internal" dimensionType="Standard">
+  <descriptions defaultDescription="Sales order Billing Status"/>
+  <metadata changedAt="2012-12-12 16:43:02.753" createdAt="2012-12-12 16:29:09.714"/>
+  <origin/>
+  <defaultSchema/>
+  <attributes>
+    <attribute id="BillingStatus" hidden="false" displayAttribute="false">
+      <descriptions defaultDescription="BillingStatus"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::constants" columnName="FixedValue"/>
+    </attribute>
+    <attribute id="BillingStatus_Desc" hidden="false" displayAttribute="false">
+      <descriptions defaultDescription="BillingStatus_Description"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::constants" columnName="Description"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <privateDataFoundation>
+    <tableProxies>
+      <tableProxy>
+        <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::constants"/>
+        <columnFilter columnName="Language">
+          <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="$$language$$"/>
+        </columnFilter>
+        <columnFilter columnName="Domain">
+          <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="D_SO_CF"/>
+        </columnFilter>
+      </tableProxy>
+    </tableProxies>
+    <joins/>
+    <layout>
+      <shapes>
+        <shape modelObjectName="<PACKAGE_NAME>.data::constants" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+          <upperLeftCorner x="648" y="142"/>
+        </shape>
+      </shapes>
+    </layout>
+  </privateDataFoundation>
+  <hierarchies/>
+</Dimension:dimension>

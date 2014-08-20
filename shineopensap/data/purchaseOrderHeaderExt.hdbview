@@ -1,0 +1,12 @@
+schema = "_SYS_BIC";
+query = "SELECT T0.\"PurchaseOrderId\", T0.\"CreatedBy\", T1.\"FirstName\" \"CreatedByFirstName\", 
+T1.\"LastName\" \"CreatedByLastName\", T1.\"LoginName\" \"CreatedByLoginName\", 
+T0.\"CreatedAt\", T0.\"ChangedAt\", T0.\"PartnerId\", 
+T2.\"CompanyName\", T0.\"Currency\", T0.\"GrossAmount\", 
+T0.\"NetAmount\", T0.\"TaxAmount\"  from 
+\"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::purchaseOrder\" T0 
+left outer join \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::employees\" 
+T1 on T0.\"CreatedBy\" = T1.\"EmployeeId\" 
+left outer join \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::businessPartner\" T2 on  T0.\"PartnerId\" = T2.\"PartnerId\" 
+order by T0.\"PurchaseOrderId\" ";
+

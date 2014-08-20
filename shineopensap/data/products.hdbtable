@@ -1,0 +1,26 @@
+table.schemaName = "<SCHEMA_NAME>";
+table.tableType = COLUMNSTORE;  
+table.description = "EPM Product Data";
+table.columns = [ 
+	{name = "ProductId"; sqlType = NVARCHAR; nullable = false; length = 10; comment = "Product ID"; },
+	{name = "TypeCode"; sqlType = NVARCHAR; nullable = false; length = 2; comment = "Product Type Code"; },
+	{name = "Category"; sqlType = NVARCHAR; nullable = false; length = 40; comment = "Product Category"; },	
+	{name = "CreatedBy"; sqlType = NVARCHAR; nullable = false; length = 10; comment = "Created By"; },
+	{name = "CreatedAt"; sqlType = DATE; nullable = false;  comment = "Created At - Date and Time"; },
+	{name = "ChangedBy"; sqlType = NVARCHAR; nullable = true; length = 10; comment = "Last Changed By"; },	
+	{name = "ChangedAt"; sqlType = DATE; nullable = true;  comment = "Last Changed At - Date and Time"; },	
+	{name = "NameId"; sqlType = NVARCHAR; nullable = false; length = 10; comment = "Product Name ID"; },
+	{name = "DescId"; sqlType = NVARCHAR; nullable = false; length = 10; comment = "Product Description ID"; },	
+	{name = "SupplierId"; sqlType = NVARCHAR; nullable = false; length = 10; comment = "Supplier ID"; },
+	{name = "TaxTariffCode"; sqlType = SMALLINT; nullable = false; defaultValue = "0"; comment = "Tax Tariff Code"; },		
+	{name = "QuantityUnit"; sqlType = NVARCHAR; nullable = false; length = 3; comment = "Quantity Unit"; },
+	{name = "WeightMeasure"; sqlType = DECIMAL; nullable = false; precision = 13; scale = 3; defaultValue = "0"; comment = "Weight Measure"; },
+	{name = "WeightUnit"; sqlType = NVARCHAR; nullable = false; length = 3; comment = "Weight Unit"; },
+	{name = "Currency"; sqlType = NVARCHAR; nullable = false; length = 5; comment = "Currency Code"; },	
+	{name = "Price"; sqlType = DECIMAL; nullable = false; precision = 15; scale = 2; defaultValue = "0"; comment = "Product Unit Price"; },	
+	{name = "ProductPicURL"; sqlType = NVARCHAR; nullable = true; length = 255; comment = "URL of Product Image"; },
+	{name = "Width"; sqlType = DECIMAL; nullable = false; precision = 13; scale = 3; defaultValue = "0"; comment = "Width Dimension"; },
+	{name = "Depth"; sqlType = DECIMAL; nullable = false; precision = 13; scale = 3; defaultValue = "0"; comment = "Depth Dimension"; },
+	{name = "Height"; sqlType = DECIMAL; nullable = false; precision = 13; scale = 3; defaultValue = "0"; comment = "Height Dimension"; },			
+	{name = "DimensionUnit"; sqlType = NVARCHAR; nullable = false; length = 3; comment = "Dimension Unit"; } ]; 	
+table.primaryKey.pkcolumns = ["ProductId"];

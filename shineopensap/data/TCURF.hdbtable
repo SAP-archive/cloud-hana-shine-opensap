@@ -1,0 +1,14 @@
+table.schemaName = "<SCHEMA_NAME>";
+table.tableType = COLUMNSTORE;  
+table.columns = [ 
+	{name = "MANDT"; sqlType = NVARCHAR; length = 3; nullable = true; defaultValue = "000";  },
+	{name = "KURST"; sqlType = NVARCHAR; length = 4; nullable = true; defaultValue = "";  },	
+	{name = "FCURR"; sqlType = NVARCHAR; length = 5; nullable = true; defaultValue = "";  },	
+	{name = "TCURR"; sqlType = NVARCHAR; length = 5; nullable = true; defaultValue = "";  },
+	{name = "GDATU"; sqlType = NVARCHAR; length = 8; nullable = true; defaultValue = "";  },
+	{name = "FFACT"; sqlType = DECIMAL; precision = 9; scale = 0; nullable = true; defaultValue = "0";  },
+	{name = "TFACT"; sqlType = DECIMAL; precision = 9; scale = 0; nullable = true; defaultValue = "0";  },
+	{name = "ABWCT"; sqlType = NVARCHAR; length = 4; nullable = true; defaultValue = "";  },	
+	{name = "ABWGA"; sqlType = NVARCHAR; length = 8; nullable = true; defaultValue = "00000000";  } ];
+table.primaryKey.pkcolumns = ["MANDT", "KURST", "FCURR", "TCURR", "GDATU"];
+

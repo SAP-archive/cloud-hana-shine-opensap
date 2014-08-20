@@ -1,0 +1,9 @@
+table.schemaName = "<SCHEMA_NAME>";
+table.tableType = COLUMNSTORE;  
+table.description = "EPM Texts";
+table.columns = [ 
+	{name = "TextId"; sqlType = NVARCHAR; nullable = false; length = 10; comment = "Text ID"; },
+	{name = "Language"; sqlType = NVARCHAR; nullable = false; length = 1; comment = "Language Key"; },
+	{name = "ISOLanguage"; sqlType = NVARCHAR; nullable = false; length = 2; comment = "ISO Language Key"; },	
+	{name = "Text"; sqlType = NVARCHAR; nullable = false; length = 1024; comment = "Text"; } ];
+table.primaryKey.pkcolumns = ["TextId"];

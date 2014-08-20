@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dimension:dimension xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.2" id="AT_PRODUCT" defaultClient="000" defaultLanguage="$$language$$" visibility="internal" dimensionType="Standard">
+  <origin/>
+  <descriptions defaultDescription="Product With Details"/>
+  <metadata changedAt="2012-12-14 13:59:01.793" createdAt="2012-12-05 19:13:25.101"/>
+  <defaultSchema/>
+  <attributes>
+    <attribute id="Product_Name" hidden="false" displayAttribute="false">
+      <descriptions/>
+      <searchProperties>
+        <freestyleSearch>true</freestyleSearch>
+      </searchProperties>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::texts" columnName="Text"/>
+    </attribute>
+    <attribute id="Product_Description" hidden="false" displayAttribute="false">
+      <descriptions/>
+      <searchProperties>
+        <freestyleSearch>true</freestyleSearch>
+      </searchProperties>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::texts" alias="<PACKAGE_NAME>.data::description" columnName="Text"/>
+    </attribute>
+    <attribute id="Product_Id" hidden="false" displayAttribute="false">
+      <descriptions/>
+      <searchProperties/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::products" columnName="ProductId"/>
+    </attribute>
+    <attribute id="Product_Category" hidden="false" displayAttribute="false">
+      <descriptions/>
+      <searchProperties/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::products" columnName="Category"/>
+    </attribute>
+    <attribute id="Product_Currency" hidden="false" displayAttribute="false">
+      <descriptions/>
+      <searchProperties/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::products" columnName="Currency"/>
+    </attribute>
+    <attribute id="Product_Price" hidden="false" displayAttribute="false">
+      <descriptions/>
+      <searchProperties/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::products" columnName="Price"/>
+    </attribute>
+    <attribute id="Product_TypeCode" hidden="false" displayAttribute="false">
+      <descriptions defaultDescription="TypeCode"/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::products" columnName="TypeCode"/>
+    </attribute>
+    <attribute id="Supplier_CompanyName" hidden="false" displayAttribute="false">
+      <descriptions/>
+      <searchProperties/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::businessPartner" columnName="CompanyName"/>
+    </attribute>
+    <attribute id="Supplier_City" hidden="false" displayAttribute="false">
+      <descriptions/>
+      <searchProperties/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses" columnName="City"/>
+    </attribute>
+    <attribute id="Supplier_Id" hidden="false" displayAttribute="false">
+      <searchProperties/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::businessPartner" columnName="PartnerId"/>
+    </attribute>
+    <attribute id="Supplier_PostalCode" hidden="false" displayAttribute="false">
+      <descriptions/>
+      <searchProperties/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses" columnName="PostalCode"/>
+    </attribute>
+    <attribute id="Supplier_Street" hidden="false" displayAttribute="false">
+      <descriptions/>
+      <searchProperties/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses" columnName="Street"/>
+    </attribute>
+    <attribute id="Supplier_Building" hidden="false" displayAttribute="false">
+      <descriptions/>
+      <searchProperties/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses" columnName="Building"/>
+    </attribute>
+    <attribute id="Supplier_Country" hidden="false" displayAttribute="false">
+      <descriptions/>
+      <searchProperties/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses" columnName="Country"/>
+    </attribute>
+    <attribute id="ProductId" hidden="false" displayAttribute="false" key="true">
+      <descriptions/>
+      <searchProperties/>
+      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::products" columnName="ProductId"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <privateDataFoundation>
+    <tableProxies>
+      <tableProxy>
+        <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::texts"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::products"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::texts" alias="<PACKAGE_NAME>.data::description"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::businessPartner"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses"/>
+      </tableProxy>
+    </tableProxies>
+    <joins>
+      <join languageColumn="Language">
+        <leftTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::products"/>
+        <rightTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::texts"/>
+        <leftColumns>
+          <columnName>NameId</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>TextId</columnName>
+        </rightColumns>
+        <properties cardinality="C1_1" joinOperator="Equal" joinType="textTable"/>
+      </join>
+      <join>
+        <leftTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::products"/>
+        <rightTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::businessPartner"/>
+        <leftColumns>
+          <columnName>SupplierId</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>PartnerId</columnName>
+        </rightColumns>
+        <properties cardinality="C1_N" joinOperator="Equal" joinType="inner"/>
+      </join>
+      <join>
+        <leftTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::businessPartner"/>
+        <rightTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses"/>
+        <leftColumns>
+          <columnName>AddressId</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>AddressId</columnName>
+        </rightColumns>
+        <properties cardinality="C1_1" joinOperator="Equal" joinType="inner"/>
+      </join>
+      <join languageColumn="Language">
+        <leftTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::products"/>
+        <rightTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::texts" alias="<PACKAGE_NAME>.data::description"/>
+        <leftColumns>
+          <columnName>DescId</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>TextId</columnName>
+        </rightColumns>
+        <properties cardinality="C1_1" joinOperator="Equal" joinType="textTable"/>
+      </join>
+    </joins>
+    <layout>
+      <shapes>
+        <shape modelObjectName="<PACKAGE_NAME>.data::texts" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+          <upperLeftCorner x="1324" y="16"/>
+        </shape>
+        <shape modelObjectName="<PACKAGE_NAME>.data::products" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+          <upperLeftCorner x="803" y="16"/>
+        </shape>
+        <shape modelObjectName="<PACKAGE_NAME>.data::description" modelObjectType="catalog">
+          <upperLeftCorner x="16" y="160"/>
+        </shape>
+        <shape modelObjectName="<PACKAGE_NAME>.data::businessPartner" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+          <upperLeftCorner x="1324" y="148"/>
+        </shape>
+        <shape modelObjectName="<PACKAGE_NAME>.data::addresses" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+          <upperLeftCorner x="1889" y="112"/>
+        </shape>
+      </shapes>
+    </layout>
+  </privateDataFoundation>
+  <hierarchies/>
+</Dimension:dimension>

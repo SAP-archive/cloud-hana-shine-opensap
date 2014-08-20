@@ -1,0 +1,14 @@
+table.schemaName = "<SCHEMA_NAME>";
+table.tableType = COLUMNSTORE;  
+table.description = "EPM Addresses";
+table.columns = [ 
+	{name = "AddressId"; sqlType = NVARCHAR; nullable = false; length = 10; comment = "Address ID"; },
+	{name = "City"; sqlType = NVARCHAR; nullable = false; length = 40; comment = "City"; },
+	{name = "PostalCode"; sqlType = NVARCHAR; nullable = false; length = 10; comment = "Postal Code"; },
+	{name = "Street"; sqlType = NVARCHAR; nullable = false; length = 60; comment = "Street"; },	
+	{name = "Building"; sqlType = NVARCHAR; nullable = false; length = 10; comment = "Building"; },	
+	{name = "Country"; sqlType = NVARCHAR; nullable = false; length = 3; comment = "Country"; },
+	{name = "AddressType"; sqlType = NVARCHAR; nullable = false; length = 2; comment = "Address Type"; },	
+	{name = "StartDate"; sqlType = DATE; nullable = false; comment = "Validity Start Date"; },
+	{name = "EndDate"; sqlType = DATE; nullable = false; comment = "Validity End Date"; } ];	
+table.primaryKey.pkcolumns = ["AddressId"];

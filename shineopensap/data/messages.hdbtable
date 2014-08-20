@@ -1,0 +1,10 @@
+table.schemaName = "<SCHEMA_NAME>";
+table.tableType = COLUMNSTORE;  
+table.description = "EPM Messages";
+table.columns = [ 
+	{name = "MessageClass"; sqlType = NVARCHAR; nullable = false; length = 20; comment = "Message Class"; },
+	{name = "MessageNumber"; sqlType = NVARCHAR; nullable = false; length = 3; comment = "Message Number"; },
+	{name = "Language"; sqlType = NVARCHAR; nullable = false; length = 2; comment = "Language"; }, 
+	{name = "Description"; sqlType = NVARCHAR; nullable = false; length = 255; comment = "Short Description"; },
+	{name = "Text"; sqlType = NCLOB; nullable = true; comment = "Text"; } ];	
+table.primaryKey.pkcolumns = ["MessageClass","MessageNumber","Language"];

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.2" id="CV_PURCHASE_OVERVIEW" defaultClient="$$client$$" defaultLanguage="$$language$$" visibility="reportingEnabled" calculationScenarioType="TREE_BASED" runWithInvokerPrivileges="false">
+  <origin/>
+  <descriptions defaultDescription="Purchase orders"/>
+  <metadata changedAt="2012-12-13 18:07:57.013" createdAt="2012-12-13 18:04:40.031"/>
+  <defaultSchema schemaName="<SCHEMA_NAME>"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="AN_PURCHASE_OVERVIEW" type="ANALYTIC_VIEW">
+      <viewAttributes allViewAttributes="true"/>
+      <resourceUri>/<PACKAGE_NAME>.models/analyticviews/AN_PURCHASE_OVERVIEW</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews/>
+  <logicalModel id="AN_PURCHASE_OVERVIEW">
+    <descriptions defaultDescription="Purchase orders">
+      <description language="EN"/>
+    </descriptions>
+    <attributes>
+      <attribute id="PurchaseOrderItem">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="PurchaseOrderItem"/>
+      </attribute>
+      <attribute id="Currency">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="Currency"/>
+      </attribute>
+      <attribute id="PurchaseOrderId">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="PurchaseOrderId"/>
+      </attribute>
+      <attribute id="Quantity">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="Quantity"/>
+      </attribute>
+      <attribute id="QuantityUnit">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="QuantityUnit"/>
+      </attribute>
+      <attribute id="DeliveryDate">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="DeliveryDate"/>
+      </attribute>
+      <attribute id="DateCurrencyConversion">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="DateCurrencyConversion"/>
+      </attribute>
+      <attribute id="Product_Name">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="Product_Name"/>
+      </attribute>
+      <attribute id="Product_Description">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="Product_Description"/>
+      </attribute>
+      <attribute id="Product_Id">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="Product_Id"/>
+      </attribute>
+      <attribute id="Product_Category">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="Product_Category"/>
+      </attribute>
+      <attribute id="Product_Currency">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="Product_Currency"/>
+      </attribute>
+      <attribute id="Product_Price">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="Product_Price"/>
+      </attribute>
+      <attribute id="Product_TypeCode">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="Product_TypeCode"/>
+      </attribute>
+      <attribute id="Supplier_CompanyName">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="Supplier_CompanyName"/>
+      </attribute>
+      <attribute id="Supplier_City">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="Supplier_City"/>
+      </attribute>
+      <attribute id="Supplier_Id">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="Supplier_Id"/>
+      </attribute>
+      <attribute id="Supplier_PostalCode">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="Supplier_PostalCode"/>
+      </attribute>
+      <attribute id="Supplier_Street">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="Supplier_Street"/>
+      </attribute>
+      <attribute id="Supplier_Building">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="Supplier_Building"/>
+      </attribute>
+      <attribute id="Supplier_Country">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="Supplier_Country"/>
+      </attribute>
+      <attribute id="ProductId">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="ProductId"/>
+      </attribute>
+      <attribute id="DATE_SQL">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="DATE_SQL"/>
+      </attribute>
+      <attribute id="MONTH">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="MONTH"/>
+      </attribute>
+      <attribute id="YEAR">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="YEAR"/>
+      </attribute>
+      <attribute id="QUARTER">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="QUARTER"/>
+      </attribute>
+      <attribute id="WEEK">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="WEEK"/>
+      </attribute>
+      <attribute id="FixedValue">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="FixedValue"/>
+      </attribute>
+      <attribute id="Description">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="Description"/>
+      </attribute>
+      <attribute id="Confirmation_Status_fixed">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="AT_PO_CONFIRMATION_STATUS_FixedValue"/>
+      </attribute>
+      <attribute id="Confirmation_Status_Description">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="AT_PO_CONFIRMATION_STATUS_Description"/>
+      </attribute>
+      <attribute id="Lifecylce_Status_FixedValue">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="AT_PO_LIFECYCLE_STATUS_FixedValue"/>
+      </attribute>
+      <attribute id="Ordering_Status_FixedValue">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="AT_PO_ORDERING_STATUS_FixedValue"/>
+      </attribute>
+      <attribute id="Lifecycle_Status_Description">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="AT_PO_LIFECYCLE_STATUS_Description"/>
+      </attribute>
+      <attribute id="Ordering_Status_Description">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="AT_PO_ORDERING_STATUS_Description"/>
+      </attribute>
+      <attribute id="ConvGrossAmount_CURRENCY">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="ConvGrossAmount.CURRENCY"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="NetAmount" measureType="simple">
+        <measureMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="NetAmount"/>
+      </measure>
+      <measure id="TaxAmount" measureType="simple">
+        <measureMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="TaxAmount"/>
+      </measure>
+      <measure id="ConvGrossAmount" measureType="simple">
+        <measureMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="ConvGrossAmount"/>
+      </measure>
+      <measure id="GrossAmount" measureType="simple">
+        <measureMapping columnObjectName="AN_PURCHASE_OVERVIEW" columnName="GrossAmount"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures>
+      <measure id="PO_Count" aggregationType="sum" measureType="simple" datatype="INTEGER" calculatedMeasureType="counter">
+        <descriptions defaultDescription="Number of purchase orders"/>
+        <exceptionAggregation exceptionAggregationType="countDistinct">
+          <attribute attributeName="PurchaseOrderId"/>
+        </exceptionAggregation>
+        <formula>1</formula>
+      </measure>
+      <measure id="PO_Item_Count" aggregationType="sum" measureType="simple" datatype="INTEGER" calculatedMeasureType="counter">
+        <descriptions defaultDescription="Number of purchase order items"/>
+        <exceptionAggregation exceptionAggregationType="countDistinct">
+          <attribute attributeName="PurchaseOrderId"/>
+          <attribute attributeName="PurchaseOrderItem"/>
+        </exceptionAggregation>
+        <formula>1</formula>
+      </measure>
+    </calculatedMeasures>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="25" y="42"/>
+      </shape>
+      <shape modelObjectName="AN_PURCHASE_OVERVIEW" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="22" y="87"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

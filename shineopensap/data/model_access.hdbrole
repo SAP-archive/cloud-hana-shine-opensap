@@ -1,0 +1,52 @@
+role <PACKAGE_NAME>.data::model_access {
+
+	package <PACKAGE_NAME>: REPO.READ, REPO.EDIT_NATIVE_OBJECTS, REPO.ACTIVATE_NATIVE_OBJECTS, REPO.MAINTAIN_NATIVE_PACKAGES;
+	
+	sql object <PACKAGE_NAME>.data:addresses.hdbtable,
+	           <PACKAGE_NAME>.data:businessPartner.hdbtable,
+	           <PACKAGE_NAME>.data:constants.hdbtable,
+	           <PACKAGE_NAME>.data:employees.hdbtable,
+	           <PACKAGE_NAME>.data:messages.hdbtable,
+	           <PACKAGE_NAME>.data:products.hdbtable,
+	           <PACKAGE_NAME>.data:purchaseOrder.hdbtable,
+	           <PACKAGE_NAME>.data:purchaseOrderItem.hdbtable,
+	           <PACKAGE_NAME>.data:salesOrder.hdbtable,
+	           <PACKAGE_NAME>.data:salesOrderItem.hdbtable, 
+	           <PACKAGE_NAME>.data:texts.hdbtable: SELECT, INSERT, UPDATE, DELETE;
+	           	           
+	sql object <PACKAGE_NAME>.data:T006.hdbtable,
+	           <PACKAGE_NAME>.data:T006A.hdbtable,
+	           <PACKAGE_NAME>.data:TCURC.hdbtable,
+	           <PACKAGE_NAME>.data:TCURF.hdbtable,
+	           <PACKAGE_NAME>.data:TCURN.hdbtable,
+	           <PACKAGE_NAME>.data:TCURR.hdbtable,
+	           <PACKAGE_NAME>.data:TCURT.hdbtable,
+	           <PACKAGE_NAME>.data:TCURV.hdbtable,
+	           <PACKAGE_NAME>.data:TCURW.hdbtable,
+	           <PACKAGE_NAME>.data:TCURX.hdbtable,
+	           <PACKAGE_NAME>.data:TIME_DIMENSION.hdbtable,
+	           <PACKAGE_NAME>.data:purchaseOrderHeaderExt.hdbview: SELECT;
+
+    sql object  <PACKAGE_NAME>.models:AN_PURCHASE_COMMON_CURRENCY.analyticview,
+    			<PACKAGE_NAME>.models:AN_PURCHASE_OVERVIEW.analyticview,
+    			<PACKAGE_NAME>.models:AN_SALES_OVERVIEW.analyticview,
+    	
+    			<PACKAGE_NAME>.models:AT_BUYER.attributeview,
+    			<PACKAGE_NAME>.models:AT_PO_APPROVAL_STATUS.attributeview,
+    			<PACKAGE_NAME>.models:AT_PO_CONFIRMATION_STATUS.attributeview,
+    			<PACKAGE_NAME>.models:AT_PO_LIFECYCLE_STATUS.attributeview,
+    			<PACKAGE_NAME>.models:AT_PO_ORDERING_STATUS.attributeview,
+    			<PACKAGE_NAME>.models:AT_PRODUCT.attributeview,
+    			<PACKAGE_NAME>.models:AT_PURCHASE_ORDER_WORKLIST.attributeview,
+    			<PACKAGE_NAME>.models:AT_SO_BILLING_STATUS.attributeview,
+    			<PACKAGE_NAME>.models:AT_SO_DELIVERY_STATUS.attributeview,
+    			<PACKAGE_NAME>.models:AT_SO_LIFECYCLE_STATUS.attributeview,
+    			<PACKAGE_NAME>.models:AT_TIME_DIMENSION.attributeview,
+    			<PACKAGE_NAME>.models:AT_TIME_DIMENSION_COPY.attributeview,
+    			
+    			<PACKAGE_NAME>.models:CV_PURCHASE_OVERVIEW.calculationview,
+    			<PACKAGE_NAME>.models:CV_SALES_OVERVIEW.calculationview : SELECT;
+	 
+	analytic privilege: <PACKAGE_NAME>.models:EPM.analyticprivilege;
+	application privilege: <PACKAGE_NAME>::Basic;
+}

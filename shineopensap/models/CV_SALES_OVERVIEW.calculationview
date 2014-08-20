@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.2" id="CV_SALES_OVERVIEW" defaultClient="$$client$$" defaultLanguage="$$language$$" visibility="reportingEnabled" calculationScenarioType="TREE_BASED" runWithInvokerPrivileges="false">
+  <origin/>
+  <descriptions defaultDescription="Overview of sales orders"/>
+  <metadata changedAt="2012-12-13 17:57:53.393" createdAt="2012-12-13 17:57:49.954"/>
+  <defaultSchema schemaName="<SCHEMA_NAME>"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="AN_SALES_OVERVIEW" type="ANALYTIC_VIEW">
+      <viewAttributes allViewAttributes="true"/>
+      <resourceUri>/<PACKAGE_NAME>.models/analyticviews/AN_SALES_OVERVIEW</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews/>
+  <logicalModel id="AN_SALES_OVERVIEW">
+    <descriptions defaultDescription="Overview of sales orders">
+      <description language="EN"/>
+    </descriptions>
+    <attributes>
+      <attribute id="SalesOrderItem">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="SalesOrderItem"/>
+      </attribute>
+      <attribute id="Currency">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="Currency"/>
+      </attribute>
+      <attribute id="QuantityUnit">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="QuantityUnit"/>
+      </attribute>
+      <attribute id="Posting_date">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="Posting_date"/>
+      </attribute>
+      <attribute id="SalesOrderId">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="SalesOrderId"/>
+      </attribute>
+      <attribute id="City">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="City"/>
+      </attribute>
+      <attribute id="PostalCode">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="PostalCode"/>
+      </attribute>
+      <attribute id="Street">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="Street"/>
+      </attribute>
+      <attribute id="Country">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="Country"/>
+      </attribute>
+      <attribute id="Building">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="Building"/>
+      </attribute>
+      <attribute id="PartnerId">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="PartnerId"/>
+      </attribute>
+      <attribute id="EmailAddress">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="EmailAddress"/>
+      </attribute>
+      <attribute id="CompanyName">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="CompanyName"/>
+      </attribute>
+      <attribute id="Product_Name">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="Product_Name"/>
+      </attribute>
+      <attribute id="Product_Description">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="Product_Description"/>
+      </attribute>
+      <attribute id="Product_Id">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="Product_Id"/>
+      </attribute>
+      <attribute id="Product_Category">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="Product_Category"/>
+      </attribute>
+      <attribute id="Product_Currency">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="Product_Currency"/>
+      </attribute>
+      <attribute id="Product_Price">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="Product_Price"/>
+      </attribute>
+      <attribute id="Product_TypeCode">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="Product_TypeCode"/>
+      </attribute>
+      <attribute id="Supplier_CompanyName">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="Supplier_CompanyName"/>
+      </attribute>
+      <attribute id="Supplier_City">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="Supplier_City"/>
+      </attribute>
+      <attribute id="Supplier_Id">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="Supplier_Id"/>
+      </attribute>
+      <attribute id="Supplier_PostalCode">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="Supplier_PostalCode"/>
+      </attribute>
+      <attribute id="Supplier_Street">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="Supplier_Street"/>
+      </attribute>
+      <attribute id="Supplier_Building">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="Supplier_Building"/>
+      </attribute>
+      <attribute id="Supplier_Country">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="Supplier_Country"/>
+      </attribute>
+      <attribute id="ProductId">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="ProductId"/>
+      </attribute>
+      <attribute id="DATE_SQL">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="DATE_SQL"/>
+      </attribute>
+      <attribute id="MONTH">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="MONTH"/>
+      </attribute>
+      <attribute id="YEAR">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="YEAR"/>
+      </attribute>
+      <attribute id="QUARTER">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="QUARTER"/>
+      </attribute>
+      <attribute id="WEEK">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="WEEK"/>
+      </attribute>
+      <attribute id="BillingStatus">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="BillingStatus"/>
+      </attribute>
+      <attribute id="BillingStatus_Desc">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="BillingStatus_Desc"/>
+      </attribute>
+      <attribute id="DeliveryStatus">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="DeliveryStatus"/>
+      </attribute>
+      <attribute id="DeliveryStatus_Desc">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="DeliveryStatus_Desc"/>
+      </attribute>
+      <attribute id="LifecycleStatus">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="LifecycleStatus"/>
+      </attribute>
+      <attribute id="LifecycleStatus_Desc">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="LifecycleStatus_Desc"/>
+      </attribute>
+      <attribute id="NetAmount_CURRENCY">
+        <descriptions>
+          <description language="EN"/>
+        </descriptions>
+        <searchProperties/>
+        <keyMapping columnObjectName="AN_SALES_OVERVIEW" columnName="NetAmount.CURRENCY"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="RM_Amount_New" measureType="simple">
+        <measureMapping columnObjectName="AN_SALES_OVERVIEW" columnName="RM_Amount_New"/>
+      </measure>
+      <measure id="RM_Amount_InProcess" measureType="simple">
+        <measureMapping columnObjectName="AN_SALES_OVERVIEW" columnName="RM_Amount_InProcess"/>
+      </measure>
+      <measure id="RM_Amount_UnPaid" measureType="simple">
+        <measureMapping columnObjectName="AN_SALES_OVERVIEW" columnName="RM_Amount_UnPaid"/>
+      </measure>
+      <measure id="RM_Amount_Delivered" measureType="simple">
+        <measureMapping columnObjectName="AN_SALES_OVERVIEW" columnName="RM_Amount_Delivered"/>
+      </measure>
+      <measure id="RM_Amount_UnDelivered" measureType="simple">
+        <measureMapping columnObjectName="AN_SALES_OVERVIEW" columnName="RM_Amount_UnDelivered"/>
+      </measure>
+      <measure id="RM_Amount_Completed" measureType="simple">
+        <measureMapping columnObjectName="AN_SALES_OVERVIEW" columnName="RM_Amount_Completed"/>
+      </measure>
+      <measure id="RM_Amount_Paid" measureType="simple">
+        <measureMapping columnObjectName="AN_SALES_OVERVIEW" columnName="RM_Amount_Paid"/>
+      </measure>
+      <measure id="NetAmount" measureType="simple">
+        <measureMapping columnObjectName="AN_SALES_OVERVIEW" columnName="NetAmount"/>
+      </measure>
+      <measure id="Quantity" measureType="simple">
+        <measureMapping columnObjectName="AN_SALES_OVERVIEW" columnName="Quantity"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures>
+      <measure id="SO_Count" aggregationType="sum" measureType="simple" datatype="INTEGER" calculatedMeasureType="counter">
+        <descriptions defaultDescription="SO_Count"/>
+        <exceptionAggregation exceptionAggregationType="countDistinct">
+          <attribute attributeName="SalesOrderId"/>
+        </exceptionAggregation>
+        <formula>1</formula>
+      </measure>
+      <measure id="SO_Item_Count" aggregationType="sum" measureType="simple" datatype="INTEGER" calculatedMeasureType="counter">
+        <descriptions defaultDescription="SO_Item_Count"/>
+        <exceptionAggregation exceptionAggregationType="countDistinct">
+          <attribute attributeName="SalesOrderId"/>
+          <attribute attributeName="SalesOrderItem"/>
+        </exceptionAggregation>
+        <formula>1</formula>
+      </measure>
+    </calculatedMeasures>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="70" y="35"/>
+      </shape>
+      <shape modelObjectName="AN_SALES_OVERVIEW" modelObjectNameSpace="DataSource">
+        <upperLeftCorner x="98" y="239"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

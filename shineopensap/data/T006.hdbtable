@@ -1,0 +1,28 @@
+table.schemaName = "<SCHEMA_NAME>";
+table.tableType = COLUMNSTORE;  
+table.columns = [ 
+	{name = "MANDT"; sqlType = NVARCHAR; length = 3; nullable = true; defaultValue = "000";  },
+	{name = "MSEHI"; sqlType = NVARCHAR; length = 3; nullable = true; defaultValue = "";  },	
+	{name = "KZEX3"; sqlType = NVARCHAR; length = 1; nullable = true; defaultValue = "";  },	
+	{name = "KZEX6"; sqlType = NVARCHAR; length = 1; nullable = true; defaultValue = "";  },	
+	{name = "ANDEC"; sqlType = SMALLINT; nullable = true; defaultValue = "0";  },	
+	{name = "KZKEH"; sqlType = NVARCHAR; length = 1; nullable = true; defaultValue = "";  },		
+	{name = "KZWOB"; sqlType = NVARCHAR; length = 1; nullable = true; defaultValue = "";  },	
+	{name = "KZ1EH"; sqlType = NVARCHAR; length = 1; nullable = true; defaultValue = "";  },
+	{name = "KZ2EH"; sqlType = NVARCHAR; length = 1; nullable = true; defaultValue = "";  },	
+	{name = "DIMID"; sqlType = NVARCHAR; length = 6; nullable = true; defaultValue = "";  },
+	{name = "ZAEHL"; sqlType = INTEGER; nullable = true; defaultValue = "0";  },
+	{name = "NENNR"; sqlType = INTEGER; nullable = true; defaultValue = "0";  },	
+	{name = "EXP10"; sqlType = SMALLINT; nullable = true; defaultValue = "0";  },	
+	{name = "ADDKO"; sqlType = DECIMAL; precision = 9; scale = 6; nullable = true; defaultValue = "0";  },
+	{name = "EXPON"; sqlType = SMALLINT; nullable = true; defaultValue = "0";  },	
+	{name = "DECAN"; sqlType = SMALLINT; nullable = true; defaultValue = "0";  },	
+	{name = "ISOCODE"; sqlType = NVARCHAR; length = 3; nullable = true; defaultValue = "";  },
+	{name = "PRIMARY"; sqlType = NVARCHAR; length = 1; nullable = true; defaultValue = "";  },
+	{name = "TEMP_VALUE"; sqlType = DOUBLE; nullable = true; defaultValue = "0";  },	
+	{name = "TEMP_UNIT"; sqlType = NVARCHAR; length = 3; nullable = true; defaultValue = "";  },
+	{name = "FAMUNIT"; sqlType = NVARCHAR; length = 3; nullable = true; defaultValue = "";  },
+	{name = "PRESS_VAL"; sqlType = DOUBLE; nullable = true; defaultValue = "0";  },
+	{name = "PRESS_UNIT"; sqlType = NVARCHAR; length = 3; nullable = true; defaultValue = "";  } ];	
+table.primaryKey.pkcolumns = ["MANDT", "MSEHI"];
+

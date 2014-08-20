@@ -1,0 +1,24 @@
+table.schemaName = "<SCHEMA_NAME>";
+table.tableType = COLUMNSTORE;  
+table.description = "EPM Employees";
+table.columns = [ 
+	{name = "EmployeeId"; sqlType = NVARCHAR; nullable = false; length = 10; comment = "Employee ID"; },
+	{name = "FirstName"; sqlType = NVARCHAR; nullable = false; length = 40; comment = "Given Name"; },
+	{name = "MiddleName"; sqlType = NVARCHAR; nullable = true; length = 40; comment = "Middle Name"; },
+	{name = "LastName"; sqlType = NVARCHAR; nullable = false; length = 40; comment = "Family Name"; },	
+	{name = "Initials"; sqlType = NVARCHAR; nullable = true; length = 10; comment = "Initials"; },		
+	{name = "Sex"; sqlType = NVARCHAR; nullable = false; length = 1; comment = "Sex"; },
+	{name = "Language"; sqlType = NVARCHAR; nullable = false; length = 1; comment = "Language Key"; },	
+	{name = "PhoneNumber"; sqlType = NVARCHAR; nullable = true; length = 30; comment = "Business Phone Number"; },	
+	{name = "EmailAddress"; sqlType = NVARCHAR; nullable = false; length = 255; comment = "E-Mail Address"; },	
+	{name = "LoginName"; sqlType = NVARCHAR; nullable = false; length = 12; comment = "System Login Name"; },
+	{name = "AddressId"; sqlType = NVARCHAR; nullable = true; length = 10; comment = "Address ID"; },
+	{name = "StartDate"; sqlType = DATE; nullable = false; comment = "Employment Start Date"; },
+	{name = "EndDate"; sqlType = DATE; nullable = false; comment = "Employment End Date"; },	
+	{name = "Currency"; sqlType = NVARCHAR; nullable = false; length = 5; comment = "Currency Code"; },
+	{name = "SalaryAmount"; sqlType = DECIMAL; nullable = false; precision = 15; scale = 2; defaultValue = "0"; comment = "Salary"; },
+	{name = "AccountNumber"; sqlType = NVARCHAR; nullable = false; length = 10; comment = "Account Number"; },
+	{name = "BankId"; sqlType = NVARCHAR; nullable = false; length = 10 ; defaultValue = "0000000000"; comment = "Bank ID";},	
+	{name = "BankName"; sqlType = NVARCHAR; nullable = false; length = 255; comment = "Bank Name"; },
+	{name = "EmployeePicURL"; sqlType = NVARCHAR; nullable = false; length = 255; comment = "URL of Employee Picture"; }];								
+table.primaryKey.pkcolumns = ["EmployeeId"];

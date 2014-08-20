@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Privilege:analyticPrivilege xmlns:Privilege="http://www.sap.com/ndb/BiModelPrivilege.ecore" schemaVersion="1.1" id="EPM">
+  <descriptions defaultDescription="Analytic Privilege for EPM"/>
+  <securedModels allInformationModels="false">
+    <modelUri>/<PACKAGE_NAME>.models/analyticviews/AN_PURCHASE_COMMON_CURRENCY</modelUri>
+    <modelUri>/<PACKAGE_NAME>.models/analyticviews/AN_PURCHASE_OVERVIEW</modelUri>
+    <modelUri>/<PACKAGE_NAME>.models/analyticviews/AN_SALES_OVERVIEW</modelUri>
+    <modelUri>/<PACKAGE_NAME>.models/attributeviews/AT_BUYER</modelUri>
+    <modelUri>/<PACKAGE_NAME>.models/attributeviews/AT_PO_APPROVAL_STATUS</modelUri>
+    <modelUri>/<PACKAGE_NAME>.models/attributeviews/AT_PO_CONFIRMATION_STATUS</modelUri>
+    <modelUri>/<PACKAGE_NAME>.models/attributeviews/AT_PO_LIFECYCLE_STATUS</modelUri>
+    <modelUri>/<PACKAGE_NAME>.models/attributeviews/AT_PO_ORDERING_STATUS</modelUri>
+    <modelUri>/<PACKAGE_NAME>.models/attributeviews/AT_PRODUCT</modelUri>
+    <modelUri>/<PACKAGE_NAME>.models/attributeviews/AT_PURCHASE_ORDER_WORKLIST</modelUri>
+    <modelUri>/<PACKAGE_NAME>.models/attributeviews/AT_SO_BILLING_STATUS</modelUri>
+    <modelUri>/<PACKAGE_NAME>.models/attributeviews/AT_SO_DELIVERY_STATUS</modelUri>
+    <modelUri>/<PACKAGE_NAME>.models/attributeviews/AT_SO_LIFECYCLE_STATUS</modelUri>
+    <modelUri>/<PACKAGE_NAME>.models/attributeviews/AT_TIME_DIMENSION</modelUri>
+    <modelUri>/<PACKAGE_NAME>.models/attributeviews/AT_TIME_DIMENSION_COPY</modelUri>
+    <modelUri>/<PACKAGE_NAME>.models/calculationviews/CV_PURCHASE_OVERVIEW</modelUri>
+    <modelUri>/<PACKAGE_NAME>.models/calculationviews/CV_SALES_OVERVIEW</modelUri>
+  </securedModels>
+</Privilege:analyticPrivilege>
