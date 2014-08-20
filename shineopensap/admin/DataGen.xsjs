@@ -1,7 +1,7 @@
-$.import("<PACKAGE_NAME>.services", "messages");
-var MESSAGES = $.<PACKAGE_NAME>.services.messages;
-$.import("<PACKAGE_NAME>.services", "session");
-var SESSIONINFO = $.<PACKAGE_NAME>.services.session;
+$.import("{{PACKAGE_NAME}}.services", "messages");
+var MESSAGES = $.{{PACKAGE_NAME}}.services.messages;
+$.import("{{PACKAGE_NAME}}.services", "session");
+var SESSIONINFO = $.{{PACKAGE_NAME}}.services.session;
 
 
 function reloadSeed() {
@@ -41,20 +41,20 @@ function reloadSeed() {
 		var conn = $.db.getConnection(8);
 
 		// Truncate the existing table
-		var query = "TRUNCATE TABLE \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::"
+		var query = "TRUNCATE TABLE \"{{SCHEMA_NAME}}\".\"{{PACKAGE_NAME}}.data::"
 				+ object + "\"";
 		var pstmt = conn.prepareStatement(query);
 		pstmt.execute();
 		pstmt.close();
 		conn.commit();
 		body = body
-				+ "Truncated: \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::"
+				+ "Truncated: \"{{SCHEMA_NAME}}\".\"{{PACKAGE_NAME}}.data::"
 				+ object + "\" \n";
 
 		// Reload seed data by activating the CSV
 		// create object id (object to write to)
 		var objectId = $.repo.createObjectId("",
-				"<PACKAGE_NAME>.data", object, "csv");
+				"{{PACKAGE_NAME}}.data", object, "csv");
 		// create inactive session
 		var inactiveSession = $.repo.createInactiveSession(conn, "TempReseed");
 		// activate the object
@@ -64,7 +64,7 @@ function reloadSeed() {
 		
 		conn.commit();
 		body = body
-				+ "Reseeded: \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::"
+				+ "Reseeded: \"{{SCHEMA_NAME}}\".\"{{PACKAGE_NAME}}.data::"
 				+ object + "\" \n";
 
 		$.response.status = $.net.http.OK;
@@ -106,7 +106,7 @@ function resetSequence() {
 		var conn = $.db.getConnection(8);
 
 		// Truncate the existing table
-		var query = "DROP SEQUENCE \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::"
+		var query = "DROP SEQUENCE \"{{SCHEMA_NAME}}\".\"{{PACKAGE_NAME}}.data::"
 				+ object + "\"";
 		
 		var pstmt = conn.prepareStatement(query);
@@ -114,13 +114,13 @@ function resetSequence() {
 		pstmt.close();
 		conn.commit();
 		body = body
-				+ "Dropped: \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::"
+				+ "Dropped: \"{{SCHEMA_NAME}}\".\"{{PACKAGE_NAME}}.data::"
 				+ object + "\" \n";
 
 		// Reload seed data by activating the CSV
 		// create object id (object to write to)
 		var objectId = $.repo.createObjectId("",
-				"<PACKAGE_NAME>.data", object, "hdbsequence");
+				"{{PACKAGE_NAME}}.data", object, "hdbsequence");
 		// create inactive session
 		var inactiveSession = $.repo.createInactiveSession(conn,
 				"TempResequence");
@@ -130,7 +130,7 @@ function resetSequence() {
 		// commit the changes
 		conn.commit();
 		body = body
-				+ "Sequence reset: \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::"
+				+ "Sequence reset: \"{{SCHEMA_NAME}}\".\"{{PACKAGE_NAME}}.data::"
 				+ object + "\" \n";
 
 		$.response.status = $.net.http.OK;
@@ -152,7 +152,7 @@ function replicatePurchaseOrders() {
 	try {
 		var conn = $.db.getConnection();
 
-		var query = "SELECT MAX(\"PurchaseOrderId\") FROM \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::purchaseOrder\"";
+		var query = "SELECT MAX(\"PurchaseOrderId\") FROM \"{{SCHEMA_NAME}}\".\"{{PACKAGE_NAME}}.data::purchaseOrder\"";
 		var pstmt = conn.prepareStatement(query);
 		var rs = pstmt.executeQuery();
 		while (rs.next()) {
@@ -168,12 +168,12 @@ function replicatePurchaseOrders() {
 			maxPoId = parseInt(maxPoId, 10) + 1;
 		}
 
-		query = "INSERT INTO \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::purchaseOrder\" "
+		query = "INSERT INTO \"{{SCHEMA_NAME}}\".\"{{PACKAGE_NAME}}.data::purchaseOrder\" "
 				+ "(\"PurchaseOrderId\", \"CreatedBy\", \"CreatedAt\", \"ChangedBy\", \"ChangedAt\", \"NoteId\", \"PartnerId\", \"Currency\", \"GrossAmount\", \"NetAmount\", \"TaxAmount\", \"LifecycleStatus\", \"ApprovalStatus\", \"ConfirmStatus\", \"OrderingStatus\", \"InvoicingStatus\" ) "
 				+ "select to_int(\"PurchaseOrderId\" + "
 				+ maxPoId
 				+ " - 300000000 ), \"CreatedBy\", \"CreatedAt\", \"ChangedBy\", \"ChangedAt\", \"NoteId\", \"PartnerId\", \"Currency\", \"GrossAmount\", \"NetAmount\", \"TaxAmount\", \"LifecycleStatus\", \"ApprovalStatus\", \"ConfirmStatus\", \"OrderingStatus\", \"InvoicingStatus\" "
-				+ "  from \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::purchaseOrder\" WHERE \"PurchaseOrderId\" <= '0300000999' ";
+				+ "  from \"{{SCHEMA_NAME}}\".\"{{PACKAGE_NAME}}.data::purchaseOrder\" WHERE \"PurchaseOrderId\" <= '0300000999' ";
 		pstmt = conn.prepareStatement(query);
 		var iNumPo = pstmt.executeUpdate();
 		pstmt.close();
@@ -181,12 +181,12 @@ function replicatePurchaseOrders() {
 				+ MESSAGES.getMessage('SEPM_ADMIN', '001', iNumPo,
 						'purchaseOrder') + "\n";
 
-		query = "INSERT INTO \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::purchaseOrderItem\" "
+		query = "INSERT INTO \"{{SCHEMA_NAME}}\".\"{{PACKAGE_NAME}}.data::purchaseOrderItem\" "
 				+ "(\"PurchaseOrderId\", \"PurchaseOrderItem\", \"ProductId\", \"NoteId\", \"Currency\", \"GrossAmount\", \"NetAmount\", \"TaxAmount\", \"Quantity\", \"QuantityUnit\", \"DeliveryDate\") "
 				+ "select to_int(\"PurchaseOrderId\" + "
 				+ maxPoId
 				+ " - 300000000 ), \"PurchaseOrderItem\", \"ProductId\", \"NoteId\", \"Currency\", \"GrossAmount\", \"NetAmount\", \"TaxAmount\", \"Quantity\", \"QuantityUnit\", \"DeliveryDate\" "
-				+ "  from \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::purchaseOrderItem\" WHERE \"PurchaseOrderId\" <= '0300000999' ";
+				+ "  from \"{{SCHEMA_NAME}}\".\"{{PACKAGE_NAME}}.data::purchaseOrderItem\" WHERE \"PurchaseOrderId\" <= '0300000999' ";
 		pstmt = conn.prepareStatement(query);
 		var iNumItem = pstmt.executeUpdate();
 		pstmt.close();
@@ -211,7 +211,7 @@ function replicateSalesOrders() {
 	try {
 		var conn = $.db.getConnection();
 
-		var query = "SELECT MAX(\"SalesOrderId\") FROM \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::salesOrder\"";
+		var query = "SELECT MAX(\"SalesOrderId\") FROM \"{{SCHEMA_NAME}}\".\"{{PACKAGE_NAME}}.data::salesOrder\"";
 		var pstmt = conn.prepareStatement(query);
 		var rs = pstmt.executeQuery();
 		while (rs.next()) {
@@ -227,12 +227,12 @@ function replicateSalesOrders() {
 			maxSoId = parseInt(maxSoId, 10) + 1;
 		}
 
-		query = "INSERT INTO \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::salesOrder\" "
+		query = "INSERT INTO \"{{SCHEMA_NAME}}\".\"{{PACKAGE_NAME}}.data::salesOrder\" "
 				+ "(\"SalesOrderId\", \"CreatedBy\", \"CreatedAt\", \"ChangedBy\", \"ChangedAt\", \"NoteId\", \"PartnerId\", \"Currency\", \"GrossAmount\", \"NetAmount\", \"TaxAmount\", \"LifecycleStatus\", \"BillingStatus\", \"DeliveryStatus\" ) "
 				+ "select to_int(\"SalesOrderId\" + "
 				+ maxSoId
 				+ " - 500000000 ), \"CreatedBy\", \"CreatedAt\", \"ChangedBy\", \"ChangedAt\", \"NoteId\", \"PartnerId\", \"Currency\", \"GrossAmount\", \"NetAmount\", \"TaxAmount\", \"LifecycleStatus\", \"BillingStatus\", \"DeliveryStatus\" "
-				+ "  from \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::salesOrder\" WHERE \"SalesOrderId\" <= '0500000999' ";
+				+ "  from \"{{SCHEMA_NAME}}\".\"{{PACKAGE_NAME}}.data::salesOrder\" WHERE \"SalesOrderId\" <= '0500000999' ";
 		pstmt = conn.prepareStatement(query);
 		var iNumSo = pstmt.executeUpdate();
 		pstmt.close();
@@ -241,12 +241,12 @@ function replicateSalesOrders() {
 						.getMessage('SEPM_ADMIN', '001', iNumSo, 'salesOrder')
 				+ "\n";
 
-		query = "INSERT INTO \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::salesOrderItem\" "
+		query = "INSERT INTO \"{{SCHEMA_NAME}}\".\"{{PACKAGE_NAME}}.data::salesOrderItem\" "
 				+ "(\"SalesOrderId\", \"SalesOrderItem\", \"ProductId\", \"NoteId\", \"Currency\", \"GrossAmount\", \"NetAmount\", \"TaxAmount\", \"ItemATPStatus\", \"OPItemPos\", \"Quantity\", \"QuantityUnit\", \"DeliveryDate\") "
 				+ "select to_int(\"SalesOrderId\" + "
 				+ maxSoId
 				+ " - 500000000 ), \"SalesOrderItem\", \"ProductId\", \"NoteId\", \"Currency\", \"GrossAmount\", \"NetAmount\", \"TaxAmount\", \"ItemATPStatus\", \"OPItemPos\", \"Quantity\", \"QuantityUnit\", \"DeliveryDate\" "
-				+ "  from \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::salesOrderItem\" WHERE \"SalesOrderId\" <= '0500000999' ";
+				+ "  from \"{{SCHEMA_NAME}}\".\"{{PACKAGE_NAME}}.data::salesOrderItem\" WHERE \"SalesOrderId\" <= '0500000999' ";
 		pstmt = conn.prepareStatement(query);
 		var iNumItem = pstmt.executeUpdate();
 		pstmt.close();
@@ -291,14 +291,14 @@ function getTableSize() {
 			"purchaseOrderItem", "salesOrder", "salesOrderItem", "texts" ];
 	
 	for (i = 0; i < tableArray.length; i++) {
-		var query = 'SELECT COUNT(*) FROM \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::'
+		var query = 'SELECT COUNT(*) FROM \"{{SCHEMA_NAME}}\".\"{{PACKAGE_NAME}}.data::'
 				+ tableArray[i] + '\"';
 		var conn = $.db.getConnection();
 		var pstmt = conn.prepareStatement(query);
 		var rs = pstmt.executeQuery();
 	
 	
-		var query2 = 'SELECT "TABLE_SIZE" FROM \"SYS\".\"M_TABLES\" WHERE \"SCHEMA_NAME\" = \'<SCHEMA_NAME>\' AND \"TABLE_NAME\" = \'<PACKAGE_NAME>.data::'
+		var query2 = 'SELECT "TABLE_SIZE" FROM \"SYS\".\"M_TABLES\" WHERE \"SCHEMA_NAME\" = \'{{SCHEMA_NAME}}\' AND \"TABLE_NAME\" = \'{{PACKAGE_NAME}}.data::'
 				+ tableArray[i] + '\'';
 		var pstmt2 = conn.prepareStatement(query2);
 		var rs2 = pstmt2.executeQuery();
@@ -335,7 +335,7 @@ function generateSynonym() {
 			"TCURT", "TCURV", "TCURW", "TCURX" ];
 	for (i = 0; i < tableArray.length; i++) {
 		try {
-			query = "DROP SYNONYM \"<SCHEMA_NAME>\".\"" + tableArray[i]
+			query = "DROP SYNONYM \"{{SCHEMA_NAME}}\".\"" + tableArray[i]
 					+ "\" ";
 			pstmt = conn.prepareStatement(query);
 			pstmt.execute();
@@ -345,17 +345,17 @@ function generateSynonym() {
 	}
 
 	for (i = 0; i < tableArray.length; i++) {
-		query = "CREATE SYNONYM \"<SCHEMA_NAME>\".\""
+		query = "CREATE SYNONYM \"{{SCHEMA_NAME}}\".\""
 				+ tableArray[i]
-				+ "\" FOR \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::"
+				+ "\" FOR \"{{SCHEMA_NAME}}\".\"{{PACKAGE_NAME}}.data::"
 				+ tableArray[i] + "\"";
 		pstmt = conn.prepareStatement(query);
 		pstmt.execute();
 		pstmt.close();
 		body = body
-				+ "Created Synonym: \"<SCHEMA_NAME>\".\""
+				+ "Created Synonym: \"{{SCHEMA_NAME}}\".\""
 				+ tableArray[i]
-				+ " FOR \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::"
+				+ " FOR \"{{SCHEMA_NAME}}\".\"{{PACKAGE_NAME}}.data::"
 				+ tableArray[i] + "\" \n";
 	}
 

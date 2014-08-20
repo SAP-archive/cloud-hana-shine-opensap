@@ -1,4 +1,4 @@
-table.schemaName = "<SCHEMA_NAME>";
+table.schemaName = "{{SCHEMA_NAME}}";
 table.tableType = COLUMNSTORE;  
 table.description = "EPM Constants";
 table.columns = [ 

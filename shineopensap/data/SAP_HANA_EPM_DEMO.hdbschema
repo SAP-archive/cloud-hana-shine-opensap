@@ -1,1 +1,1 @@
-schema_name="<SCHEMA_NAME>";
+schema_name="{{SCHEMA_NAME}}";

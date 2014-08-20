@@ -1,9 +1,9 @@
-service namespace "<PACKAGE_NAME>" { 
+service namespace "{{PACKAGE_NAME}}" { 
 
-   "<PACKAGE_NAME>.data::purchaseOrderHeaderExt" as "PurchaseOrderHeader" keys ("PurchaseOrderId") 
+   "{{PACKAGE_NAME}}.data::purchaseOrderHeaderExt" as "PurchaseOrderHeader" keys ("PurchaseOrderId") 
    navigates ("PO_Item" as "PurchaseOrderItem");
    
-   "<PACKAGE_NAME>.models/AT_PURCHASE_ORDER_WORKLIST.attributeview" as "PurchaseOrderItem" keys ("PurchaseOrderId","PurchaseOrderItem");
+   "{{PACKAGE_NAME}}.models/AT_PURCHASE_ORDER_WORKLIST.attributeview" as "PurchaseOrderItem" keys ("PurchaseOrderId","PurchaseOrderItem");
    
    association "PO_Item" principal "PurchaseOrderHeader"("PurchaseOrderId") 
      multiplicity "1" dependent "PurchaseOrderItem"("PurchaseOrderId") multiplicity "*";

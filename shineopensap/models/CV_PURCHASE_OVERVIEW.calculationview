@@ -3,13 +3,13 @@
   <origin/>
   <descriptions defaultDescription="Purchase orders"/>
   <metadata changedAt="2012-12-13 18:07:57.013" createdAt="2012-12-13 18:04:40.031"/>
-  <defaultSchema schemaName="<SCHEMA_NAME>"/>
+  <defaultSchema schemaName="{{SCHEMA_NAME}}"/>
   <localVariables/>
   <variableMappings/>
   <dataSources>
     <DataSource id="AN_PURCHASE_OVERVIEW" type="ANALYTIC_VIEW">
       <viewAttributes allViewAttributes="true"/>
-      <resourceUri>/<PACKAGE_NAME>.models/analyticviews/AN_PURCHASE_OVERVIEW</resourceUri>
+      <resourceUri>/{{PACKAGE_NAME}}.models/analyticviews/AN_PURCHASE_OVERVIEW</resourceUri>
     </DataSource>
   </dataSources>
   <calculationViews/>

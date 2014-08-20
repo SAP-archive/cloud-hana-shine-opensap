@@ -1,7 +1,7 @@
-$.import("<PACKAGE_NAME>.services", "messages");
-var MESSAGES = $.<PACKAGE_NAME>.services.messages;
-$.import("<PACKAGE_NAME>.services", "session");
-var SESSIONINFO = $.<PACKAGE_NAME>.services.session;
+$.import("{{PACKAGE_NAME}}.services", "messages");
+var MESSAGES = $.{{PACKAGE_NAME}}.services.messages;
+$.import("{{PACKAGE_NAME}}.services", "session");
+var SESSIONINFO = $.{{PACKAGE_NAME}}.services.session;
 
 function getFilter() {
 	function createFilterEntry(rs, attribute, obj) {
@@ -30,7 +30,7 @@ function getFilter() {
 
 	try {
 		// Business Partner Company Name
-		query = "SELECT TOP 50 DISTINCT TO_NVARCHAR(\"CompanyName\") FROM \"<PACKAGE_NAME>.data::businessPartner\" "
+		query = "SELECT TOP 50 DISTINCT TO_NVARCHAR(\"CompanyName\") FROM \"{{PACKAGE_NAME}}.data::businessPartner\" "
 				+ " WHERE CONTAINS(\"CompanyName\",?)";
 		pstmt = conn.prepareStatement(query);
 		pstmt.setString(1, terms);
@@ -45,7 +45,7 @@ function getFilter() {
 		pstmt.close();
 
 		// Business Partner City
-		query = "SELECT TOP 50 DISTINCT TO_NVARCHAR(\"City\") FROM \"<PACKAGE_NAME>.models::AT_BUYER\" "
+		query = "SELECT TOP 50 DISTINCT TO_NVARCHAR(\"City\") FROM \"{{PACKAGE_NAME}}.models::AT_BUYER\" "
 				+ " WHERE CONTAINS(\"City\",?)";
 		pstmt = conn.prepareStatement(query);
 		pstmt.setString(1, terms);
@@ -60,7 +60,7 @@ function getFilter() {
 		pstmt.close();
 
 		// Product - Product Category
-		query = "SELECT TOP 50 DISTINCT TO_NVARCHAR(\"Category\") FROM \"<PACKAGE_NAME>.data::products\" "
+		query = "SELECT TOP 50 DISTINCT TO_NVARCHAR(\"Category\") FROM \"{{PACKAGE_NAME}}.data::products\" "
 				+ "WHERE CONTAINS(\"Category\",?)";
 		pstmt = conn.prepareStatement(query);
 		pstmt.setString(1, terms);
@@ -75,7 +75,7 @@ function getFilter() {
 		pstmt.close();
 
 		// Product - Product ID
-		query = "SELECT TOP 50 DISTINCT TO_NVARCHAR(\"ProductId\") FROM \"<PACKAGE_NAME>.data::products\" "
+		query = "SELECT TOP 50 DISTINCT TO_NVARCHAR(\"ProductId\") FROM \"{{PACKAGE_NAME}}.data::products\" "
 				+ "WHERE CONTAINS(\"ProductId\",?)";
 		pstmt = conn.prepareStatement(query);
 		pstmt.setString(1, terms);
@@ -90,7 +90,7 @@ function getFilter() {
 		pstmt.close();
 
 		// Product - Product Name
-		query = "SELECT TOP 50 DISTINCT TO_NVARCHAR(\"Product_Name\") FROM \"<PACKAGE_NAME>.models::AT_PRODUCT\" "
+		query = "SELECT TOP 50 DISTINCT TO_NVARCHAR(\"Product_Name\") FROM \"{{PACKAGE_NAME}}.models::AT_PRODUCT\" "
 				+ "WHERE CONTAINS(\"Product_Name\",?)";
 		pstmt = conn.prepareStatement(query);
 		pstmt.setString(1, terms);
@@ -105,7 +105,7 @@ function getFilter() {
 		pstmt.close();
 
 		// Product - Product Desc
-		query = "SELECT TOP 50 DISTINCT TO_NVARCHAR(\"Product_Description\") FROM \"<PACKAGE_NAME>.models::AT_PRODUCT\" "
+		query = "SELECT TOP 50 DISTINCT TO_NVARCHAR(\"Product_Description\") FROM \"{{PACKAGE_NAME}}.models::AT_PRODUCT\" "
 				+ "WHERE CONTAINS(\"Product_Description\",?)";
 		pstmt = conn.prepareStatement(query);
 		pstmt.setString(1, terms);
@@ -117,7 +117,7 @@ function getFilter() {
 		}
 
 		// PO - PO ID
-		query = "SELECT TOP 50 DISTINCT TO_NVARCHAR(\"PurchaseOrderId\") FROM \"<PACKAGE_NAME>.data::purchaseOrder\" "
+		query = "SELECT TOP 50 DISTINCT TO_NVARCHAR(\"PurchaseOrderId\") FROM \"{{PACKAGE_NAME}}.data::purchaseOrder\" "
 				+ "WHERE CONTAINS(\"PurchaseOrderId\",?)";
 		pstmt = conn.prepareStatement(query);
 		pstmt.setString(1, terms);
@@ -183,7 +183,7 @@ function getTotalOrders() {
 	try {
 		var query = 'SELECT top 5 "'
 				+ ivGroupBy
-				+ '", SUM("ConvGrossAmount") FROM "<PACKAGE_NAME>.models::AN_PURCHASE_COMMON_CURRENCY" (\'PLACEHOLDER\' = (\'$$IP_O_TARGET_CURRENCY$$\', \''
+				+ '", SUM("ConvGrossAmount") FROM "{{PACKAGE_NAME}}.models::AN_PURCHASE_COMMON_CURRENCY" (\'PLACEHOLDER\' = (\'$$IP_O_TARGET_CURRENCY$$\', \''
 				+ ivCurrency + '\')) group by "' + ivGroupBy
 				+ '" order by sum("ConvGrossAmount") desc';
 		$.trace.debug(query);
@@ -218,7 +218,7 @@ function downloadExcel() {
 
 	try {
 		var query = 'SELECT TOP 25000 \"PurchaseOrderId\", \"PartnerId\", \"CompanyName\", \"CreatedByLoginName\", \"CreatedAt\", \"GrossAmount\" '
-				+ 'FROM \"_SYS_BIC\".\"<PACKAGE_NAME>.data::purchaseOrderHeaderExt\" order by \"PurchaseOrderId\"';
+				+ 'FROM \"_SYS_BIC\".\"{{PACKAGE_NAME}}.data::purchaseOrderHeaderExt\" order by \"PurchaseOrderId\"';
 
 		var conn = $.db.getConnection();
 		var pstmt = conn.prepareStatement(query);

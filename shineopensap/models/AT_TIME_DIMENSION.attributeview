@@ -10,48 +10,48 @@
         <description description="" language="EN"/>
       </descriptions>
       <searchProperties/>
-      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::TIME_DIMENSION" columnName="DATE_SQL"/>
+      <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::TIME_DIMENSION" columnName="DATE_SQL"/>
     </attribute>
     <attribute id="MONTH" key="false">
       <descriptions defaultDescription="">
         <description description="" language="EN"/>
       </descriptions>
       <searchProperties/>
-      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::TIME_DIMENSION" columnName="MONTH"/>
+      <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::TIME_DIMENSION" columnName="MONTH"/>
     </attribute>
     <attribute id="YEAR" key="false">
       <descriptions defaultDescription="">
         <description description="" language="EN"/>
       </descriptions>
       <searchProperties/>
-      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::TIME_DIMENSION" columnName="YEAR"/>
+      <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::TIME_DIMENSION" columnName="YEAR"/>
     </attribute>
     <attribute id="QUARTER" key="false">
       <descriptions defaultDescription="">
         <description description="" language="EN"/>
       </descriptions>
       <searchProperties/>
-      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::TIME_DIMENSION" columnName="QUARTER"/>
+      <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::TIME_DIMENSION" columnName="QUARTER"/>
     </attribute>
     <attribute id="WEEK" key="false">
       <descriptions defaultDescription="">
         <description description="" language="EN"/>
       </descriptions>
       <searchProperties/>
-      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::TIME_DIMENSION" columnName="WEEK"/>
+      <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::TIME_DIMENSION" columnName="WEEK"/>
     </attribute>
   </attributes>
   <calculatedAttributes/>
   <privateDataFoundation>
     <tableProxies>
       <tableProxy>
-        <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::TIME_DIMENSION"/>
+        <table schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::TIME_DIMENSION"/>
       </tableProxy>
     </tableProxies>
     <joins/>
     <layout>
       <shapes>
-        <shape modelObjectName="<PACKAGE_NAME>.data::TIME_DIMENSION" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+        <shape modelObjectName="{{PACKAGE_NAME}}.data::TIME_DIMENSION" modelObjectNameSpace="{{SCHEMA_NAME}}" modelObjectType="catalog">
           <upperLeftCorner x="154" y="77"/>
         </shape>
       </shapes>

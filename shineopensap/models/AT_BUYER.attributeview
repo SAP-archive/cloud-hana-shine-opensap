@@ -8,58 +8,58 @@
     <attribute id="City" hidden="false" displayAttribute="false">
       <descriptions/>
       <searchProperties/>
-      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses" columnName="City"/>
+      <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::addresses" columnName="City"/>
     </attribute>
     <attribute id="PostalCode" hidden="false" displayAttribute="false">
       <descriptions/>
       <searchProperties/>
-      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses" columnName="PostalCode"/>
+      <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::addresses" columnName="PostalCode"/>
     </attribute>
     <attribute id="Street" hidden="false" displayAttribute="false">
       <descriptions/>
       <searchProperties/>
-      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses" columnName="Street"/>
+      <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::addresses" columnName="Street"/>
     </attribute>
     <attribute id="Country" hidden="false" displayAttribute="false">
       <descriptions/>
       <searchProperties/>
-      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses" columnName="Country"/>
+      <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::addresses" columnName="Country"/>
     </attribute>
     <attribute id="Building" hidden="false" displayAttribute="false">
       <descriptions/>
       <searchProperties/>
-      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses" columnName="Building"/>
+      <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::addresses" columnName="Building"/>
     </attribute>
     <attribute id="PartnerId" hidden="false" displayAttribute="false" key="true">
       <descriptions/>
       <searchProperties/>
-      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::businessPartner" columnName="PartnerId"/>
+      <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::businessPartner" columnName="PartnerId"/>
     </attribute>
     <attribute id="EmailAddress" hidden="false" displayAttribute="false">
       <descriptions/>
       <searchProperties/>
-      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::businessPartner" columnName="EmailAddress"/>
+      <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::businessPartner" columnName="EmailAddress"/>
     </attribute>
     <attribute id="CompanyName" hidden="false" displayAttribute="false">
       <descriptions/>
       <searchProperties/>
-      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::businessPartner" columnName="CompanyName"/>
+      <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::businessPartner" columnName="CompanyName"/>
     </attribute>
   </attributes>
   <calculatedAttributes/>
   <privateDataFoundation>
     <tableProxies>
       <tableProxy>
-        <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses"/>
+        <table schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::addresses"/>
       </tableProxy>
       <tableProxy>
-        <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::businessPartner"/>
+        <table schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::businessPartner"/>
       </tableProxy>
     </tableProxies>
     <joins>
       <join>
-        <leftTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::businessPartner"/>
-        <rightTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses"/>
+        <leftTable schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::businessPartner"/>
+        <rightTable schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::addresses"/>
         <leftColumns>
           <columnName>AddressId</columnName>
         </leftColumns>
@@ -71,10 +71,10 @@
     </joins>
     <layout>
       <shapes>
-        <shape modelObjectName="<PACKAGE_NAME>.data::addresses" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+        <shape modelObjectName="{{PACKAGE_NAME}}.data::addresses" modelObjectNameSpace="{{SCHEMA_NAME}}" modelObjectType="catalog">
           <upperLeftCorner x="8" y="53"/>
         </shape>
-        <shape modelObjectName="<PACKAGE_NAME>.data::businessPartner" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+        <shape modelObjectName="{{PACKAGE_NAME}}.data::businessPartner" modelObjectNameSpace="{{SCHEMA_NAME}}" modelObjectType="catalog">
           <upperLeftCorner x="643" y="36"/>
         </shape>
       </shapes>

@@ -6,18 +6,18 @@
   <attributes>
     <attribute id="FixedValue" hidden="false" displayAttribute="false">
       <descriptions defaultDescription="FixedValue"/>
-      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::constants" columnName="FixedValue"/>
+      <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::constants" columnName="FixedValue"/>
     </attribute>
     <attribute id="Description" hidden="false" displayAttribute="false">
       <descriptions defaultDescription="Description"/>
-      <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::constants" columnName="Description"/>
+      <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::constants" columnName="Description"/>
     </attribute>
   </attributes>
   <calculatedAttributes/>
   <privateDataFoundation>
     <tableProxies>
       <tableProxy>
-        <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::constants"/>
+        <table schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::constants"/>
         <columnFilter columnName="Language">
           <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="$$language$$"/>
         </columnFilter>
@@ -29,7 +29,7 @@
     <joins/>
     <layout>
       <shapes>
-        <shape modelObjectName="<PACKAGE_NAME>.data::constants" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+        <shape modelObjectName="{{PACKAGE_NAME}}.data::constants" modelObjectNameSpace="{{SCHEMA_NAME}}" modelObjectType="catalog">
           <upperLeftCorner x="70" y="30"/>
         </shape>
       </shapes>

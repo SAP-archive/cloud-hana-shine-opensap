@@ -3,7 +3,7 @@
   <origin/>
   <descriptions defaultDescription="Overview of purchase orders"/>
   <metadata changedAt="2013-04-10 16:27:50.474" createdAt="2012-10-04 16:00:50.572"/>
-  <defaultSchema schemaName="<SCHEMA_NAME>"/>
+  <defaultSchema schemaName="{{SCHEMA_NAME}}"/>
   <localVariables>
     <variable id="IP_O_TARGET_CURRENCY" parameter="true">
       <descriptions defaultDescription="Target currency"/>
@@ -18,78 +18,78 @@
       <attribute id="PurchaseOrderItem" hidden="false" displayAttribute="false">
         <descriptions/>
         <searchProperties/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" columnName="PurchaseOrderItem"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrderItem" columnName="PurchaseOrderItem"/>
       </attribute>
       <attribute id="Currency" hidden="false" displayAttribute="false">
         <descriptions/>
         <searchProperties/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" columnName="Currency"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrderItem" columnName="Currency"/>
       </attribute>
       <attribute id="PurchaseOrderId" hidden="false" displayAttribute="false">
         <descriptions/>
         <searchProperties/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder" columnName="PurchaseOrderId"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrder" columnName="PurchaseOrderId"/>
       </attribute>
       <attribute id="Quantity" hidden="false" displayAttribute="false">
         <descriptions/>
         <searchProperties/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" columnName="Quantity"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrderItem" columnName="Quantity"/>
       </attribute>
       <attribute id="QuantityUnit" hidden="false" displayAttribute="false">
         <descriptions/>
         <searchProperties/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" columnName="QuantityUnit"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrderItem" columnName="QuantityUnit"/>
       </attribute>
       <attribute id="DeliveryDate" hidden="false" displayAttribute="false">
         <descriptions defaultDescription="DeliveryDate"/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" columnName="DeliveryDate"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrderItem" columnName="DeliveryDate"/>
       </attribute>
       <attribute id="DateCurrencyConversion" hidden="false" displayAttribute="false">
         <descriptions defaultDescription="DateCurrencyConversion"/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder" columnName="CreatedAt"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrder" columnName="CreatedAt"/>
       </attribute>
       <attribute id="ProductId" hidden="true" displayAttribute="false">
         <descriptions/>
         <searchProperties/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" columnName="ProductId"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrderItem" columnName="ProductId"/>
       </attribute>
       <attribute id="CreatedAt" hidden="true" displayAttribute="false">
         <descriptions/>
         <searchProperties/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder" columnName="CreatedAt"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrder" columnName="CreatedAt"/>
       </attribute>
       <attribute id="ApprovalStatus" hidden="false" displayAttribute="false">
         <descriptions defaultDescription="ApprovalStatus"/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder" columnName="ApprovalStatus"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrder" columnName="ApprovalStatus"/>
       </attribute>
       <attribute id="ConfirmStatus" hidden="false" displayAttribute="false">
         <descriptions defaultDescription="ConfirmStatus"/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder" columnName="ConfirmStatus"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrder" columnName="ConfirmStatus"/>
       </attribute>
       <attribute id="LifecycleStatus" hidden="false" displayAttribute="false">
         <descriptions/>
         <searchProperties/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder" columnName="LifecycleStatus"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrder" columnName="LifecycleStatus"/>
       </attribute>
       <attribute id="OrderingStatus" hidden="false" displayAttribute="false">
         <descriptions defaultDescription="OrderingStatus"/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder" columnName="OrderingStatus"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrder" columnName="OrderingStatus"/>
       </attribute>
     </attributes>
     <calculatedAttributes/>
     <privateDataFoundation>
       <tableProxies>
         <tableProxy>
-          <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder"/>
+          <table schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrder"/>
         </tableProxy>
         <tableProxy centralTable="true">
-          <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem"/>
+          <table schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrderItem"/>
         </tableProxy>
       </tableProxies>
       <joins>
         <join>
-          <leftTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem"/>
-          <rightTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder"/>
+          <leftTable schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrderItem"/>
+          <rightTable schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrder"/>
           <leftColumns>
             <columnName>PurchaseOrderId</columnName>
           </leftColumns>
@@ -101,10 +101,10 @@
       </joins>
       <layout>
         <shapes>
-          <shape modelObjectName="<PACKAGE_NAME>.data::purchaseOrder" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+          <shape modelObjectName="{{PACKAGE_NAME}}.data::purchaseOrder" modelObjectNameSpace="{{SCHEMA_NAME}}" modelObjectType="catalog">
             <upperLeftCorner x="542" y="16"/>
           </shape>
-          <shape modelObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+          <shape modelObjectName="{{PACKAGE_NAME}}.data::purchaseOrderItem" modelObjectNameSpace="{{SCHEMA_NAME}}" modelObjectType="catalog">
             <upperLeftCorner x="1099" y="48"/>
           </shape>
         </shapes>
@@ -113,15 +113,15 @@
     <baseMeasures>
       <measure id="NetAmount" aggregationType="sum" measureType="simple">
         <descriptions/>
-        <measureMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" columnName="NetAmount"/>
+        <measureMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrderItem" columnName="NetAmount"/>
       </measure>
       <measure id="TaxAmount" aggregationType="sum" measureType="simple">
         <descriptions/>
-        <measureMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" columnName="TaxAmount"/>
+        <measureMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrderItem" columnName="TaxAmount"/>
       </measure>
       <measure id="GrossAmount" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="GrossAmount"/>
-        <measureMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" columnName="GrossAmount"/>
+        <measureMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrderItem" columnName="GrossAmount"/>
       </measure>
     </baseMeasures>
     <calculatedMeasures>
@@ -131,7 +131,7 @@
           <client>
             <value>100</value>
           </client>
-          <schema schemaName="<SCHEMA_NAME>"/>
+          <schema schemaName="{{SCHEMA_NAME}}"/>
           <sourceCurrency>
             <attribute attributeName="Currency"/>
           </sourceCurrency>
@@ -149,7 +149,7 @@
     </calculatedMeasures>
     <restrictedMeasures/>
     <sharedDimensions>
-      <logicalJoin associatedObjectUri="/<PACKAGE_NAME>.models/attributeviews/AT_PRODUCT">
+      <logicalJoin associatedObjectUri="/{{PACKAGE_NAME}}.models/attributeviews/AT_PRODUCT">
         <attributes>
           <attributeRef>#ProductId</attributeRef>
         </attributes>
@@ -159,7 +159,7 @@
         <properties cardinality="CN_1" joinOperator="Equal" joinType="leftOuter"/>
         <associatedAttributeFeatures/>
       </logicalJoin>
-      <logicalJoin associatedObjectUri="/<PACKAGE_NAME>.models/attributeviews/AT_TIME_DIMENSION">
+      <logicalJoin associatedObjectUri="/{{PACKAGE_NAME}}.models/attributeviews/AT_TIME_DIMENSION">
         <attributes>
           <attributeRef>#CreatedAt</attributeRef>
         </attributes>
@@ -169,7 +169,7 @@
         <properties cardinality="CN_1" joinOperator="Equal" joinType="leftOuter"/>
         <associatedAttributeFeatures/>
       </logicalJoin>
-      <logicalJoin associatedObjectUri="/<PACKAGE_NAME>.models/attributeviews/AT_PO_APPROVAL_STATUS">
+      <logicalJoin associatedObjectUri="/{{PACKAGE_NAME}}.models/attributeviews/AT_PO_APPROVAL_STATUS">
         <attributes>
           <attributeRef>#ApprovalStatus</attributeRef>
         </attributes>
@@ -179,7 +179,7 @@
         <properties cardinality="CN_1" joinOperator="Equal" joinType="leftOuter"/>
         <associatedAttributeFeatures/>
       </logicalJoin>
-      <logicalJoin associatedObjectUri="/<PACKAGE_NAME>.models/attributeviews/AT_PO_CONFIRMATION_STATUS">
+      <logicalJoin associatedObjectUri="/{{PACKAGE_NAME}}.models/attributeviews/AT_PO_CONFIRMATION_STATUS">
         <attributes>
           <attributeRef>#ConfirmStatus</attributeRef>
         </attributes>
@@ -192,7 +192,7 @@
           <attributeReference alias="AT_PO_CONFIRMATION_STATUS_Description" attributeName="Description"/>
         </associatedAttributeFeatures>
       </logicalJoin>
-      <logicalJoin associatedObjectUri="/<PACKAGE_NAME>.models/attributeviews/AT_PO_LIFECYCLE_STATUS">
+      <logicalJoin associatedObjectUri="/{{PACKAGE_NAME}}.models/attributeviews/AT_PO_LIFECYCLE_STATUS">
         <attributes>
           <attributeRef>#LifecycleStatus</attributeRef>
         </attributes>
@@ -205,7 +205,7 @@
           <attributeReference alias="AT_PO_LIFECYCLE_STATUS_Description" attributeName="Description"/>
         </associatedAttributeFeatures>
       </logicalJoin>
-      <logicalJoin associatedObjectUri="/<PACKAGE_NAME>.models/attributeviews/AT_PO_ORDERING_STATUS">
+      <logicalJoin associatedObjectUri="/{{PACKAGE_NAME}}.models/attributeviews/AT_PO_ORDERING_STATUS">
         <attributes>
           <attributeRef>#OrderingStatus</attributeRef>
         </attributes>
@@ -224,22 +224,22 @@
         <shape modelObjectName="MEASURE_GROUP" modelObjectType="repository">
           <upperLeftCorner x="548" y="80"/>
         </shape>
-        <shape modelObjectName="/<PACKAGE_NAME>.models/attributeviews/AT_PRODUCT.attributeview" modelObjectType="repository">
+        <shape modelObjectName="/{{PACKAGE_NAME}}.models/attributeviews/AT_PRODUCT.attributeview" modelObjectType="repository">
           <upperLeftCorner x="901" y="216"/>
         </shape>
-        <shape modelObjectName="/<PACKAGE_NAME>.models/attributeviews/AT_TIME_DIMENSION.attributeview" modelObjectType="repository">
+        <shape modelObjectName="/{{PACKAGE_NAME}}.models/attributeviews/AT_TIME_DIMENSION.attributeview" modelObjectType="repository">
           <upperLeftCorner x="16" y="296"/>
         </shape>
-        <shape modelObjectName="/<PACKAGE_NAME>.models/attributeviews/AT_PO_APPROVAL_STATUS.attributeview" modelObjectType="repository">
+        <shape modelObjectName="/{{PACKAGE_NAME}}.models/attributeviews/AT_PO_APPROVAL_STATUS.attributeview" modelObjectType="repository">
           <upperLeftCorner x="901" y="116"/>
         </shape>
-        <shape modelObjectName="/<PACKAGE_NAME>.models/attributeviews/AT_PO_CONFIRMATION_STATUS.attributeview" modelObjectType="repository">
+        <shape modelObjectName="/{{PACKAGE_NAME}}.models/attributeviews/AT_PO_CONFIRMATION_STATUS.attributeview" modelObjectType="repository">
           <upperLeftCorner x="16" y="96"/>
         </shape>
-        <shape modelObjectName="/<PACKAGE_NAME>.models/attributeviews/AT_PO_LIFECYCLE_STATUS.attributeview" modelObjectType="repository">
+        <shape modelObjectName="/{{PACKAGE_NAME}}.models/attributeviews/AT_PO_LIFECYCLE_STATUS.attributeview" modelObjectType="repository">
           <upperLeftCorner x="901" y="16"/>
         </shape>
-        <shape modelObjectName="/<PACKAGE_NAME>.models/attributeviews/AT_PO_ORDERING_STATUS.attributeview" modelObjectType="repository">
+        <shape modelObjectName="/{{PACKAGE_NAME}}.models/attributeviews/AT_PO_ORDERING_STATUS.attributeview" modelObjectType="repository">
           <upperLeftCorner x="16" y="196"/>
         </shape>
       </shapes>

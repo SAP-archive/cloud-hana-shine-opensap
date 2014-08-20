@@ -1,5 +1,5 @@
-$.import("<PACKAGE_NAME>.services", "messages");
-var MESSAGES = $.<PACKAGE_NAME>.services.messages;
+$.import("{{PACKAGE_NAME}}.services", "messages");
+var MESSAGES = $.{{PACKAGE_NAME}}.services.messages;
 
 function deletePO() {
 	var body = '';
@@ -19,7 +19,7 @@ function deletePO() {
 	try {
 		// Read Current Status for PO
 		query = "SELECT \"LifecycleStatus\", \"ApprovalStatus\", \"ConfirmStatus\", \"OrderingStatus\", \"InvoicingStatus\" "
-				+ "from \"<PACKAGE_NAME>.data::purchaseOrder\" where \"PurchaseOrderId\" = ?";
+				+ "from \"{{PACKAGE_NAME}}.data::purchaseOrder\" where \"PurchaseOrderId\" = ?";
 		pstmt = conn.prepareStatement(query);
 		pstmt.setString(1, purchaseOrderID);
 		rs = pstmt.executeQuery();
@@ -135,7 +135,7 @@ function deletePO() {
 
 	try {
 		// Update Purchase Order Status in order to delete it
-		query = "UPDATE \"<PACKAGE_NAME>.data::purchaseOrder\" set \"LifecycleStatus\" = 'X' where \"PurchaseOrderId\" = ?";
+		query = "UPDATE \"{{PACKAGE_NAME}}.data::purchaseOrder\" set \"LifecycleStatus\" = 'X' where \"PurchaseOrderId\" = ?";
 		pstmt = conn.prepareStatement(query);
 		pstmt.setString(1, purchaseOrderID);
 		var iRows = pstmt.executeUpdate();
@@ -204,7 +204,7 @@ function approvePO() {
 	try {
 		// Read Current Status for PO
 		query = "SELECT \"LifecycleStatus\", \"ApprovalStatus\", \"ConfirmStatus\", \"OrderingStatus\", \"InvoicingStatus\" "
-				+ "FROM \"<PACKAGE_NAME>.data::purchaseOrder\" WHERE \"PurchaseOrderId\" = ?";
+				+ "FROM \"{{PACKAGE_NAME}}.data::purchaseOrder\" WHERE \"PurchaseOrderId\" = ?";
 		pstmt = conn.prepareStatement(query);
 		pstmt.setString(1, purchaseOrderID);
 		rs = pstmt.executeQuery();
@@ -316,11 +316,11 @@ function approvePO() {
 
 		// Update Purchase Order Status in order to delete it
 		if (action === "Reject") {
-			query = "UPDATE \"<PACKAGE_NAME>.data::purchaseOrder\" set \"ApprovalStatus\" = 'R' where \"PurchaseOrderId\" = ?";
+			query = "UPDATE \"{{PACKAGE_NAME}}.data::purchaseOrder\" set \"ApprovalStatus\" = 'R' where \"PurchaseOrderId\" = ?";
 		}
 
 		if (action === "Accept") {
-			query = "UPDATE \"<PACKAGE_NAME>.data::purchaseOrder\" set \"ApprovalStatus\" = 'A' where \"PurchaseOrderId\" = ?";
+			query = "UPDATE \"{{PACKAGE_NAME}}.data::purchaseOrder\" set \"ApprovalStatus\" = 'A' where \"PurchaseOrderId\" = ?";
 		}
 
 		pstmt = conn.prepareStatement(query);

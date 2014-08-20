@@ -10,7 +10,7 @@ function getMessage(messageClass, messageNumber, p1, p2, p3, p4) {
 	var conn = $.db.getConnection();
 
 	var query = "SELECT \"Description\" "
-			+ "    FROM \"<SCHEMA_NAME>\".\"<PACKAGE_NAME>.data::messages\" "
+			+ "    FROM \"{{SCHEMA_NAME}}\".\"{{PACKAGE_NAME}}.data::messages\" "
 			+ "	   WHERE \"MessageClass\" = ? AND \"MessageNumber\" = ? AND \"Language\" = ? ";
 	
 	var pstmt = conn.prepareStatement(query);

@@ -3,7 +3,7 @@
   <origin/>
   <descriptions defaultDescription="Purchase Order Amounts with Currency Conversion"/>
   <metadata changedAt="2013-04-10 16:43:52.592" createdAt="2012-12-06 16:24:42.352"/>
-  <defaultSchema schemaName="<SCHEMA_NAME>"/>
+  <defaultSchema schemaName="{{SCHEMA_NAME}}"/>
   <localVariables>
     <variable id="IP_O_TARGET_CURRENCY" parameter="true">
       <descriptions defaultDescription="Target Currency"/>
@@ -17,72 +17,72 @@
     <attributes>
       <attribute id="PurchaseOrderId" hidden="false" displayAttribute="false">
         <descriptions defaultDescription="PurchaseOrderId"/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" columnName="PurchaseOrderId"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrderItem" columnName="PurchaseOrderId"/>
       </attribute>
       <attribute id="PurchaseOrderItem" hidden="false" displayAttribute="false">
         <descriptions defaultDescription="PurchaseOrderItem"/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" columnName="PurchaseOrderItem"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrderItem" columnName="PurchaseOrderItem"/>
       </attribute>
       <attribute id="ProductId" hidden="false" displayAttribute="false">
         <descriptions defaultDescription="ProductId"/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" columnName="ProductId"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrderItem" columnName="ProductId"/>
       </attribute>
       <attribute id="PartnerId" hidden="false" displayAttribute="false">
         <descriptions defaultDescription="PartnerId"/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::businessPartner" columnName="PartnerId"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::businessPartner" columnName="PartnerId"/>
       </attribute>
       <attribute id="ProductCategory" hidden="false" displayAttribute="false">
         <descriptions defaultDescription="Category"/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::products" columnName="Category"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::products" columnName="Category"/>
       </attribute>
       <attribute id="PartnerCompanyName" hidden="false" displayAttribute="false">
         <descriptions defaultDescription="CompanyName"/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::businessPartner" columnName="CompanyName"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::businessPartner" columnName="CompanyName"/>
       </attribute>
       <attribute id="PartnerCity" hidden="false" displayAttribute="false">
         <descriptions defaultDescription="City"/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses" columnName="City"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::addresses" columnName="City"/>
       </attribute>
       <attribute id="PartnerPostalCode" hidden="false" displayAttribute="false">
         <descriptions defaultDescription="PostalCode"/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses" columnName="PostalCode"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::addresses" columnName="PostalCode"/>
       </attribute>
       <attribute id="POCreatedAt" hidden="false" displayAttribute="false">
         <descriptions defaultDescription="CreatedAt"/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder" columnName="CreatedAt"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrder" columnName="CreatedAt"/>
       </attribute>
       <attribute id="Currency" hidden="false" displayAttribute="false">
         <descriptions defaultDescription="Currency"/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" columnName="Currency"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrderItem" columnName="Currency"/>
       </attribute>
       <attribute id="CreatedAt" hidden="false" displayAttribute="false">
         <descriptions defaultDescription="CreatedAt"/>
-        <keyMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder" columnName="CreatedAt"/>
+        <keyMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrder" columnName="CreatedAt"/>
       </attribute>
     </attributes>
     <calculatedAttributes/>
     <privateDataFoundation>
       <tableProxies>
         <tableProxy centralTable="true">
-          <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem"/>
+          <table schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrderItem"/>
         </tableProxy>
         <tableProxy>
-          <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder"/>
+          <table schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrder"/>
         </tableProxy>
         <tableProxy>
-          <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::products"/>
+          <table schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::products"/>
         </tableProxy>
         <tableProxy>
-          <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::businessPartner"/>
+          <table schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::businessPartner"/>
         </tableProxy>
         <tableProxy>
-          <table schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses"/>
+          <table schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::addresses"/>
         </tableProxy>
       </tableProxies>
       <joins>
         <join>
-          <leftTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem"/>
-          <rightTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder"/>
+          <leftTable schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrderItem"/>
+          <rightTable schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrder"/>
           <leftColumns>
             <columnName>PurchaseOrderId</columnName>
           </leftColumns>
@@ -92,8 +92,8 @@
           <properties cardinality="C1_N" joinOperator="Equal" joinType="referential"/>
         </join>
         <join>
-          <leftTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem"/>
-          <rightTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::products"/>
+          <leftTable schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrderItem"/>
+          <rightTable schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::products"/>
           <leftColumns>
             <columnName>ProductId</columnName>
           </leftColumns>
@@ -103,8 +103,8 @@
           <properties cardinality="C1_1" joinOperator="Equal" joinType="referential"/>
         </join>
         <join>
-          <leftTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrder"/>
-          <rightTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::businessPartner"/>
+          <leftTable schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrder"/>
+          <rightTable schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::businessPartner"/>
           <leftColumns>
             <columnName>PartnerId</columnName>
           </leftColumns>
@@ -114,8 +114,8 @@
           <properties cardinality="C1_1" joinOperator="Equal" joinType="referential"/>
         </join>
         <join>
-          <leftTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::businessPartner"/>
-          <rightTable schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::addresses"/>
+          <leftTable schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::businessPartner"/>
+          <rightTable schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::addresses"/>
           <leftColumns>
             <columnName>AddressId</columnName>
           </leftColumns>
@@ -127,19 +127,19 @@
       </joins>
       <layout>
         <shapes>
-          <shape modelObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+          <shape modelObjectName="{{PACKAGE_NAME}}.data::purchaseOrderItem" modelObjectNameSpace="{{SCHEMA_NAME}}" modelObjectType="catalog">
             <upperLeftCorner x="528" y="48"/>
           </shape>
-          <shape modelObjectName="<PACKAGE_NAME>.data::purchaseOrder" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+          <shape modelObjectName="{{PACKAGE_NAME}}.data::purchaseOrder" modelObjectNameSpace="{{SCHEMA_NAME}}" modelObjectType="catalog">
             <upperLeftCorner x="16" y="16"/>
           </shape>
-          <shape modelObjectName="<PACKAGE_NAME>.data::products" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+          <shape modelObjectName="{{PACKAGE_NAME}}.data::products" modelObjectNameSpace="{{SCHEMA_NAME}}" modelObjectType="catalog">
             <upperLeftCorner x="1053" y="25"/>
           </shape>
-          <shape modelObjectName="<PACKAGE_NAME>.data::businessPartner" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+          <shape modelObjectName="{{PACKAGE_NAME}}.data::businessPartner" modelObjectNameSpace="{{SCHEMA_NAME}}" modelObjectType="catalog">
             <upperLeftCorner x="477" y="395"/>
           </shape>
-          <shape modelObjectName="<PACKAGE_NAME>.data::addresses" modelObjectNameSpace="<SCHEMA_NAME>" modelObjectType="catalog">
+          <shape modelObjectName="{{PACKAGE_NAME}}.data::addresses" modelObjectNameSpace="{{SCHEMA_NAME}}" modelObjectType="catalog">
             <upperLeftCorner x="1302" y="489"/>
           </shape>
         </shapes>
@@ -148,7 +148,7 @@
     <baseMeasures>
       <measure id="GrossAmount" aggregationType="sum" measureType="simple">
         <descriptions defaultDescription="GrossAmount"/>
-        <measureMapping schemaName="<SCHEMA_NAME>" columnObjectName="<PACKAGE_NAME>.data::purchaseOrderItem" columnName="GrossAmount"/>
+        <measureMapping schemaName="{{SCHEMA_NAME}}" columnObjectName="{{PACKAGE_NAME}}.data::purchaseOrderItem" columnName="GrossAmount"/>
       </measure>
     </baseMeasures>
     <calculatedMeasures>
@@ -158,7 +158,7 @@
           <client>
             <value>100</value>
           </client>
-          <schema schemaName="<SCHEMA_NAME>"/>
+          <schema schemaName="{{SCHEMA_NAME}}"/>
           <sourceCurrency>
             <attribute attributeName="Currency"/>
           </sourceCurrency>
