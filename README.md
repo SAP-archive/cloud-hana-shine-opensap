@@ -1,11 +1,11 @@
-#cloud-hana-shine
+#cloud-hana-shine-opensap
 
- #cloud-hana-sample=shine
+ #cloud-hana-sample=SHINEOpenSAP
 
 ## Importing the "SHINE" source code to a Trial SAP HANA Instance with Eclipse
 *Authors: Dobromir Zahariev, Stephan Weber, Sangeetha Jayakumar*
 
-SAP HANA Interactive Education, or SHINE, is a demo application that makes it easy to learn how to build native SAP HANA applications. The demo application, comes complete with sample data and design-time developer objects for the application's database tables, data views, stored procedures, OData, and user interface.
+SAP HANA Interactive Education SP06 is a simplified version of the SHINE application, which is used in the OpenSAP courses.
 
 ### Requirements
 
@@ -23,11 +23,11 @@ Create a package with name <kbd>shine</kbd>. A detailed description can found be
 ## Add HANA repository workspace
 In the `SAP HANA Development` perspective go to `Repositories` tab, right click and choose `Create repository workspace`.
 
-- Enter <kbd>cloud-hana-shine</kbd> as workspace name.
+- Enter <kbd>cloud-hana-shine-opensap</kbd> as workspace name.
 - Enter <kbd>C:\hanaxsws</kbd> as workspace root.
 - Click `Finish` button.
 
-The final workspace location is `C:\hanaxsws\cloud-hana-shine`.
+The final workspace location is `C:\hanaxsws\cloud-hana-shine-opensap`.
 
 ## Check Out the Project
     Warning: The `p1940xxtrial` account we use in the following is just an example of a
@@ -37,16 +37,16 @@ The final workspace location is `C:\hanaxsws\cloud-hana-shine`.
 - In the `Repositories` tab, expand your repository workspace e.g. `p1940xxtrial` and right click on it.
 - Click `Check Out`.
 
-- Now you have a local folder like `C:\hanaxsws\cloud-hana-shine\p1940xxtrial\myhanaxs\shine`
+- Now you have a local folder like `C:\hanaxsws\cloud-hana-shine-opensap\p1940xxtrial\myhanaxs\shine`
 
 ## Get the example code
-- Download [https://github.com/SAP/cloud-hana-shine/archive/master.zip](https://github.com/SAP/cloud-hana-shine/archive/master.zip).
+- Download [https://github.com/SAP/cloud-hana-shine-opensap/archive/master.zip](https://github.com/SAP/cloud-hana-shine-opensap/archive/master.zip).
 
-- The zip file contains a subfolder `cloud-hana-shine-master/shine`. Extract its content to the folder `C:\hanaxsws\cloud-hana-shine\p1940xxtrial\myhanaxs\shine` we created in the last step.
+- The zip file contains a subfolder `cloud-hana-shine-opensap-master/shine`. Extract its content to the folder `C:\hanaxsws\cloud-hana-shine-opensap\p1940xxtrial\myhanaxs\shine` we created in the last step.
 
 ## Import the sample project
 - In the `SAP HANA Development` perspective go to `Project Explorer` tab, right click and choose `Import->Import->General->Existing Projects into Workspace`.
-Select root directory by browsing for the folder, e.g. `C:\hanaxsws\cloud-hana-shine\p1940xxtrial\myhanaxs\shine`.
+Select root directory by browsing for the folder, e.g. `C:\hanaxsws\cloud-hana-shine-opensap\p1940xxtrial\myhanaxs\shine`.
 - Click `Finish` button.
 The project is listed in the Project Explorer.
 
@@ -59,8 +59,8 @@ The project is listed in the Project Explorer.
         }
     e.g. to
 
-        role p1940xxtrial.myhanaxs.shine::model_access {
-            application privilege: p1940xxtrial.myhanaxs.shine::Basic;
+        role p1940xxtrial.myhanaxs.shineopensap::model_access {
+            application privilege: p1940xxtrial.myhanaxs.shineopensap::Basic;
         }
 
 
